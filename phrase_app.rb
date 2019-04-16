@@ -22,19 +22,32 @@ def save_xml(xml, filename)
 	File.write(filename, xml.to_xml)
 end
 
-def get_hash(xml)
+def get_hash_from_localizable(file)
 	hash = Hash.new
-
-	strings_nodes = xml.at('resources').children
-
-	strings_nodes.each { |node|
-		key = node.attributes['name']
-		value = node.text
-		unless key.nil? || value.nil?
-			hash[key.value] = node.text
+	text = File.foreach(file) { |line|
+		unless line.valid_encoding?
+			return
+		end
+		match = line.match("\\\"(.*?)\\\" = \\\"(.*?)\\\";\\n")
+		unless match.nil?
+			key, translation = match.captures
+			hash[translation] = key
 		end
 	}
+	return hash
+end
 
+def get_keys_hash(old_hash, new_hash)
+	hash = Hash.new
+	old_hash.each do |key, value|
+		old_key = value
+		new_key = new_hash[key]
+		if new_key.nil?
+			puts("NOT FOUND: #{key}")
+		else
+			hash[old_key] = new_key
+		end
+	end
 	return hash
 end
 
@@ -43,7 +56,7 @@ end
 #brew install phraseapp
 #phraseapp init --> .phraseapp.yml
 
-android_values_path = "../product_mobile_android_rider/rider/src/main/res/values-"
+android_values_path = "../product_mobile_anqdroid_rider/rider/src/main/res/values-"
 languages_codes = ["en", "es", "pt", "pt-BR"]
 languages_codes.each { |language_code|
 	xml = get_one_xml(android_values_path, language_code)
@@ -53,3 +66,13 @@ system("phraseapp push")
 
 #Pull ios localizables
 system("phraseapp pull")
+
+#Get translation => key hash for new/old Localizables file
+old_path = "./old/es.lproj/Localizable.strings"
+new_path = "./new/es.lproj/Localizable.strings"
+
+old_hash = get_hash_from_localizable(old_path)
+new_hash = get_hash_from_localizable(new_path)
+
+# Get old_key => new_key hash for Localizables
+keys_hash = get_keys_hash(old_hash, new_hash)

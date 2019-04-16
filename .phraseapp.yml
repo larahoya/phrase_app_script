@@ -8,6 +8,6 @@ phraseapp:
         file_format: xml
   pull:
     targets:
-    - file: ./<locale_code>.lproj/Localizable.strings
+    - file: ./new/<locale_code>.lproj/Localizable.strings
       params:
         file_format: strings
