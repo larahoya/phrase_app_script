@@ -58,7 +58,7 @@ def get_hash_from_localizable(file)
 	return hash
 end
 
-def get_shared_keys(ios_translations, android_translations)
+def get_compared_keys(ios_translations, android_translations)
 	shared_keys = Hash.new
 	ios_translations.each do |translation, ios_key|
 		android_key = android_translations[translation]
@@ -87,7 +87,11 @@ def get_new_parametrized_translation(text)
 end
 
 def get_snake_case_key(key)
-	return key
+	return key.gsub(/::/, '/')
+    .gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2')
+    .gsub(/([a-z\d])([A-Z])/,'\1_\2')
+    .tr("-", "_")
+    .downcase
 end
 
 def add_missing_translations(missing_keys, languages)
@@ -103,6 +107,20 @@ def add_missing_translations(missing_keys, languages)
 		end
 		save_xml(xml,"strings-#{language_code}.xml" )
 	end
+end
+
+def get_swift_gen_key(key)
+	return key.split('_').map.with_index { |word, index|
+		index == 0 ? word[0].downcase + word[1..-1] : word.capitalize
+	}.join
+end
+
+def get_swift_gen_compared_keys(updated_compared_keys)
+	result = Hash.new
+	updated_compared_keys.each do |old_key, new_key|
+		result[get_swift_gen_key(old_key)] = get_swift_gen_key(new_key)
+	end
+	return result
 end
 
 android_resouces_path = "../product_mobile_android_rider/rider/src/main/res/values-"
@@ -122,19 +140,22 @@ ios_old_translations = get_hash_from_localizable(ios_localizable_path)
 android_translations = get_hash_from_xml(new_xml_path)
 
 #### Get old_key => new_key hash for Localizables
-shared_keys = get_shared_keys(ios_old_translations, android_translations)
+compared_keys = get_compared_keys(ios_old_translations, android_translations)
 missing_translations_keys = get_missing_translations_keys(ios_old_translations, android_translations)
 
 #### Include missing keys in XML before uploading to phraseapp
 add_missing_translations(missing_translations_keys, languages)
+updated_android_translations = get_hash_from_xml(new_xml_path)
 
+updated_compared_keys = get_compared_keys(ios_old_translations, updated_android_translations)
 
 #### SwiftGen transformation
+swift_gen_compared_keys = get_swift_gen_compared_keys(updated_compared_keys)
 
 #### Push XML to phraseapp
-# system("phraseapp push")
+system("phraseapp push")
 
 #### Pull iOS Localizables.strings
-# system("phraseapp pull")
+system("phraseapp pull")
 
 #### Replace old keys with new ones in ios project
