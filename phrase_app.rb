@@ -69,15 +69,15 @@ def get_shared_keys(ios_translations, android_translations)
 	return shared_keys
 end
 
-def get_missing_keys(ios_translations, android_translations)
-	missing_keys = Array.new
+def get_missing_translations_keys(ios_translations, android_translations)
+	missing_translations = Array.new
 	ios_translations.each do |translation, ios_key|
 		android_key = android_translations[translation]
 		if android_key.nil?
-			missing_keys.push(ios_key)
+			missing_translations.push(ios_key)
 		end
 	end
-	return missing_keys
+	return missing_translations
 end
 
 def get_new_parametrized_translation(text)
@@ -86,8 +86,27 @@ def get_new_parametrized_translation(text)
 	}
 end
 
+def get_snake_case_key(key)
+	return key
+end
+
+def add_missing_translations(missing_keys, languages)
+	languages.each do |language_code|
+		xml_file = File.read("./strings-#{language_code}.xml")
+		xml = Nokogiri::XML(xml_file)
+		translations = get_hash_from_localizable("./old/#{language_code}.lproj/Localizable.strings")
+		missing_keys.each do |key|
+			translation = translations.key(key)
+			name = get_snake_case_key(key)
+			node = "<string name=\"#{name}\">#{translation}</string>\n"
+			xml.at('resources').add_child(node)
+		end
+		save_xml(xml,"strings-#{language_code}.xml" )
+	end
+end
+
 android_resouces_path = "../product_mobile_android_rider/rider/src/main/res/values-"
-languages = ["en", "es", "pt", "pt-BR"]
+languages = ["es"]
 ios_localizable_path = "./old/es.lproj/Localizable.strings"
 new_xml_path = "./strings-es.xml"
 
@@ -104,16 +123,18 @@ android_translations = get_hash_from_xml(new_xml_path)
 
 #### Get old_key => new_key hash for Localizables
 shared_keys = get_shared_keys(ios_old_translations, android_translations)
-missing_keys = get_missing_keys(ios_old_translations, android_translations)
+missing_translations_keys = get_missing_translations_keys(ios_old_translations, android_translations)
 
 #### Include missing keys in XML before uploading to phraseapp
+add_missing_translations(missing_translations_keys, languages)
+
 
 #### SwiftGen transformation
 
 #### Push XML to phraseapp
-system("phraseapp push")
+# system("phraseapp push")
 
 #### Pull iOS Localizables.strings
-system("phraseapp pull")
+# system("phraseapp pull")
 
 #### Replace old keys with new ones in ios project
