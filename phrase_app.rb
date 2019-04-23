@@ -123,9 +123,25 @@ def get_swift_gen_compared_keys(updated_compared_keys)
 	return result
 end
 
+def get_all_swift_files
+	return Dir["../product_mobile_ios_rider/**/*.swift"]
+end
+
+def replace_keys(compared_keys, ios_folder_path)
+	files = Dir[ios_folder_path]
+	files.each do |file_path|
+		text = File.read(file_path)
+		new_contents = compared_keys.reduce(text) { |result, keys|
+			result.gsub("L10n.#{keys[0]}", "L10n.#{keys[1]}")
+		}
+		File.open(file_path, "w") {|file| file.puts new_contents }
+	end
+end
+
 android_resouces_path = "../product_mobile_android_rider/rider/src/main/res/values-"
 languages = ["es"]
 ios_localizable_path = "./old/es.lproj/Localizable.strings"
+ios_folder_path = "../product_mobile_ios_rider/**/*.swift"
 new_xml_path = "./strings-es.xml"
 
 #### Phraseapp configuration
@@ -159,3 +175,4 @@ system("phraseapp push")
 system("phraseapp pull")
 
 #### Replace old keys with new ones in ios project
+replace_keys(swift_gen_compared_keys, ios_folder_path)
