@@ -1,5 +1,6 @@
 require 'nokogiri'
 require 'pry'
+require 'json'
 
 def get_xml_for_language(path, language_code)
 	files_path =  path + language_code
@@ -38,7 +39,7 @@ def get_hash_from_xml(filename)
 	strings_nodes.each { |node|
 		key = node.attributes['name']
 		value = node.text
-		hash[node.text] = key.value unless key.nil? || value.nil?
+		hash[remove_placeholders(node.text)] = key.value unless key.nil? || value.nil?
 	}
 
 	return hash
@@ -51,8 +52,7 @@ def get_hash_from_localizable(file)
 		match = line.match("\\\"(.*?)\\\" = \\\"(.*?)\\\";\\n")
 		unless match.nil?
 			key, translation = match.captures
-			fixed_translation = get_new_parametrized_translation(translation)
-			hash[fixed_translation] = key
+			hash[remove_placeholders(translation)] = key
 		end
 	}
 	return hash
@@ -80,10 +80,12 @@ def get_missing_translations_keys(ios_translations, android_translations)
 	return missing_translations
 end
 
-def get_new_parametrized_translation(text)
-	return text.gsub("%@").with_index { |match, i|
-		"%#{i + 1}$s"
+def remove_placeholders(text)
+	placeholders = ['/\%\d\$s/', '/\%\d\$d/', '/\%s/', '/\%d/', '/\%@/']
+	new_text = placeholders.reduce(text) { |result, regex|
+		result.gsub(regex, '')
 	}
+	return new_text.gsub(/[áéíóú]/, '')
 end
 
 def get_snake_case_key(key)
@@ -92,25 +94,46 @@ def get_snake_case_key(key)
     .gsub(/([a-z\d])([A-Z])/,'\1_\2')
     .tr("-", "_")
     .downcase
+    .gsub(' ', '_')
+end
+
+def replace_placeholders(translation)
+	return translation.gsub("%@").with_index { |match, i|
+		"%#{i + 1}$s"
+	}
 end
 
 def add_missing_translations(missing_keys, languages)
 	languages.each do |language_code|
 		xml_file = File.read("./strings-#{language_code}.xml")
 		xml = Nokogiri::XML(xml_file)
-		translations = get_hash_from_localizable("./old/#{language_code}.lproj/Localizable.strings")
+		ios_translations = get_hash_from_localizable("../product_mobile_ios_rider/CabifyRider/#{language_code}.lproj/Localizable.strings")
+		android_translations = get_hash_from_xml("./strings-#{language_code}.xml")
 		missing_keys.each do |key|
-			translation = translations.key(key)
-			name = get_snake_case_key(key)
-			node = "<string name=\"#{name}\">#{translation}</string>\n"
+			translation = ios_translations.key(key)
+			valid_android_key = get_snake_case_key(key)
+			valid_android_translation = replace_placeholders(translation)
+			already_exists = check_if_missing_key_already_exists(android_translations, valid_android_key)
+			if already_exists
+				node = "<string name=\"#{valid_android_key}_legacy\">#{valid_android_translation}</string>\n"
+			else
+				node = "<string name=\"#{valid_android_key}\">#{valid_android_translation}</string>\n"
+			end
 			xml.at('resources').add_child(node)
 		end
-		save_xml(xml,"strings-#{language_code}.xml" )
+		save_xml(xml,"final-strings-#{language_code}.xml" )
 	end
 end
 
+def check_if_missing_key_already_exists(android_translations, missing_key)
+	return android_translations.values.include? missing_key
+end
+
 def get_swift_gen_key(key)
-	return key.split('_').map.with_index { |word, index|
+	text = key.split('_').map.with_index { |word, index|
+		index == 0 ? word[0].downcase + word[1..-1] : word.capitalize
+	}.join
+	return text.split(' ').map.with_index { |word, index|
 		index == 0 ? word[0].downcase + word[1..-1] : word.capitalize
 	}.join
 end
@@ -121,6 +144,11 @@ def get_swift_gen_compared_keys(updated_compared_keys)
 		result[get_swift_gen_key(old_key)] = get_swift_gen_key(new_key)
 	end
 	return result
+end
+
+def check_duplicated_keys(swift_gen_compared_keys)
+	values = swift_gen_compared_keys.values
+	return values.find_all { |e| values.count(e) > 1 }
 end
 
 def get_all_swift_files
@@ -140,9 +168,10 @@ end
 
 android_resouces_path = "../product_mobile_android_rider/rider/src/main/res/values-"
 languages = ["es"]
-ios_localizable_path = "./old/es.lproj/Localizable.strings"
+ios_localizable_path = "../product_mobile_ios_rider/CabifyRider/es.lproj/Localizable.strings"
 ios_folder_path = "../product_mobile_ios_rider/**/*.swift"
 new_xml_path = "./strings-es.xml"
+final_xml_path = "./final-strings-es.xml"
 
 #### Phraseapp configuration
 #brew install phraseapp
@@ -158,21 +187,30 @@ android_translations = get_hash_from_xml(new_xml_path)
 #### Get old_key => new_key hash for Localizables
 compared_keys = get_compared_keys(ios_old_translations, android_translations)
 missing_translations_keys = get_missing_translations_keys(ios_old_translations, android_translations)
+File.write("./compared_keys.json", JSON.pretty_generate(compared_keys))
+File.write("./missing_keys.json", JSON.pretty_generate(missing_translations_keys))
 
 #### Include missing keys in XML before uploading to phraseapp
 add_missing_translations(missing_translations_keys, languages)
-updated_android_translations = get_hash_from_xml(new_xml_path)
+updated_android_translations = get_hash_from_xml(final_xml_path)
 
 updated_compared_keys = get_compared_keys(ios_old_translations, updated_android_translations)
+File.write("./final_compared_keys.json", JSON.pretty_generate(updated_compared_keys))
 
 #### SwiftGen transformation
 swift_gen_compared_keys = get_swift_gen_compared_keys(updated_compared_keys)
+File.write("./swift_gen_compared_keys.json", JSON.pretty_generate(swift_gen_compared_keys))
+
+duplicated_keys = check_duplicated_keys(swift_gen_compared_keys)
+unless duplicated_keys.empty?
+	raise "Duplicated keys: #{duplicated_keys}"
+end
 
 #### Push XML to phraseapp
-system("phraseapp push")
+# system("phraseapp push")
 
 #### Pull iOS Localizables.strings
-system("phraseapp pull")
+# system("phraseapp pull")
 
 #### Replace old keys with new ones in ios project
 replace_keys(swift_gen_compared_keys, ios_folder_path)
