@@ -3,7 +3,7 @@ require 'pry'
 require 'json'
 
 def get_xml_for_language(path, language_code)
-	files_path =  path + language_code
+	files_path = language_code.empty? ? path : path + "-" + language_code
 	files = Dir["#{files_path}/strings_*.xml"]
 
 	xml = Nokogiri::XML("<resources></resources>")
@@ -23,8 +23,10 @@ end
 
 def get_xml(path, languages)
 	languages.each { |language_code|
-		xml = get_xml_for_language(path, language_code)
-		save_xml(xml, "strings-#{language_code}.xml")
+		android_language_code = language_code[1]
+		ios_language_code = language_code[0]
+		xml = get_xml_for_language(path, android_language_code)
+		save_xml(xml, "strings-#{ios_language_code}.xml")
 	}
 end
 
@@ -45,9 +47,10 @@ def get_hash_from_xml(filename)
 	return hash
 end
 
-def get_hash_from_localizable(file)
+def get_hash_from_localizable(path, language_code)
+	file_path = "#{path}/#{language_code}.lproj/Localizable.strings"
 	hash = Hash.new
-	text = File.foreach(file) { |line|
+	text = File.foreach(file_path) { |line|
 		return unless line.valid_encoding?
 		match = line.match("\\\"(.*?)\\\" = \\\"(.*?)\\\";\\n")
 		unless match.nil?
@@ -98,17 +101,19 @@ def get_snake_case_key(key)
 end
 
 def replace_placeholders(translation)
+	return if translation.nil?
 	return translation.gsub("%@").with_index { |match, i|
 		"%#{i + 1}$s"
 	}
 end
 
-def add_missing_translations(missing_keys, languages)
-	languages.each do |language_code|
-		xml_file = File.read("./strings-#{language_code}.xml")
+def add_missing_translations(ios_localizables_path, missing_keys, languages)
+	languages.each do |ios_language_code, android_language_code|
+		xml_file_path = "./strings-#{ios_language_code}.xml"
+		xml_file = File.read(xml_file_path)
 		xml = Nokogiri::XML(xml_file)
-		ios_translations = get_hash_from_localizable("../product_mobile_ios_rider/CabifyRider/#{language_code}.lproj/Localizable.strings")
-		android_translations = get_hash_from_xml("./strings-#{language_code}.xml")
+		ios_translations = get_hash_from_localizable(ios_localizables_path, ios_language_code)
+		android_translations = get_hash_from_xml(xml_file_path)
 		missing_keys.each do |key|
 			translation = ios_translations.key(key)
 			valid_android_key = get_snake_case_key(key)
@@ -121,7 +126,8 @@ def add_missing_translations(missing_keys, languages)
 			end
 			xml.at('resources').add_child(node)
 		end
-		save_xml(xml,"final-strings-#{language_code}.xml" )
+		final_file_name = "final-strings-#{ios_language_code}.xml"
+		save_xml(xml,final_file_name)
 	end
 end
 
@@ -160,18 +166,26 @@ def replace_keys(compared_keys, ios_folder_path)
 	files.each do |file_path|
 		text = File.read(file_path)
 		new_contents = compared_keys.reduce(text) { |result, keys|
-			result.gsub("L10n.#{keys[0]}", "L10n.#{keys[1]}")
+			result
+			.gsub("L10n.#{keys[0]}\n", "L10n.#{keys[1]}\n")
+			.gsub("L10n.#{keys[0]} ", "L10n.#{keys[1]} ")
+			.gsub("L10n.#{keys[0]},", "L10n.#{keys[1]},")
+			.gsub("L10n.#{keys[0]}(", "L10n.#{keys[1]}(")
+			.gsub("L10n.#{keys[0]})", "L10n.#{keys[1]})")
 		}
 		File.open(file_path, "w") {|file| file.puts new_contents }
 	end
 end
 
-android_resouces_path = "../product_mobile_android_rider/rider/src/main/res/values-"
-languages = ["es"]
-ios_localizable_path = "../product_mobile_ios_rider/CabifyRider/es.lproj/Localizable.strings"
+android_resouces_path = "../product_mobile_android_rider/rider/src/main/res/values"
+languages = {
+	"es" => "es",
+	"en" => "",
+	"pt" => "pt",
+	"pt-BR" => "pt-rBR",
+}
+ios_localizables_path = "../product_mobile_ios_rider/CabifyRider"
 ios_folder_path = "../product_mobile_ios_rider/**/*.swift"
-new_xml_path = "./strings-es.xml"
-final_xml_path = "./final-strings-es.xml"
 
 #### Phraseapp configuration
 #brew install phraseapp
@@ -181,8 +195,9 @@ final_xml_path = "./final-strings-es.xml"
 get_xml(android_resouces_path, languages)
 
 #### Get translation => key hash for android/ios translations
-ios_old_translations = get_hash_from_localizable(ios_localizable_path)
-android_translations = get_hash_from_xml(new_xml_path)
+ios_old_translations = get_hash_from_localizable(ios_localizables_path, "es")
+File.write("./ios_translations.json", JSON.pretty_generate(ios_old_translations))
+android_translations = get_hash_from_xml("./strings-es.xml")
 
 #### Get old_key => new_key hash for Localizables
 compared_keys = get_compared_keys(ios_old_translations, android_translations)
@@ -191,8 +206,8 @@ File.write("./compared_keys.json", JSON.pretty_generate(compared_keys))
 File.write("./missing_keys.json", JSON.pretty_generate(missing_translations_keys))
 
 #### Include missing keys in XML before uploading to phraseapp
-add_missing_translations(missing_translations_keys, languages)
-updated_android_translations = get_hash_from_xml(final_xml_path)
+add_missing_translations(ios_localizables_path, missing_translations_keys, languages)
+updated_android_translations = get_hash_from_xml("./final-strings-es.xml")
 
 updated_compared_keys = get_compared_keys(ios_old_translations, updated_android_translations)
 File.write("./final_compared_keys.json", JSON.pretty_generate(updated_compared_keys))
