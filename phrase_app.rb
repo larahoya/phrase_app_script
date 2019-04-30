@@ -41,7 +41,7 @@ def get_hash_from_xml(filename)
 	strings_nodes.each { |node|
 		key = node.attributes['name']
 		value = node.text
-		hash[remove_placeholders(node.text)] = key.value unless key.nil? || value.nil?
+		hash[key.value] = remove_placeholders(node.text) unless key.nil? || value.nil?
 	}
 
 	return hash
@@ -55,7 +55,7 @@ def get_hash_from_localizable(path, language_code)
 		match = line.match("\\\"(.*?)\\\" = \\\"(.*?)\\\";\\n")
 		unless match.nil?
 			key, translation = match.captures
-			hash[remove_placeholders(translation)] = key
+			hash[key] = remove_placeholders(translation)
 		end
 	}
 	return hash
@@ -63,8 +63,8 @@ end
 
 def get_compared_keys(ios_translations, android_translations)
 	shared_keys = Hash.new
-	ios_translations.each do |translation, ios_key|
-		android_key = android_translations[translation]
+	ios_translations.each do |ios_key, translation|
+		android_key = android_translations.key(translation)
 		unless android_key.nil?
 			shared_keys[ios_key] = android_key
 		end
@@ -74,8 +74,8 @@ end
 
 def get_missing_translations_keys(ios_translations, android_translations)
 	missing_translations = Array.new
-	ios_translations.each do |translation, ios_key|
-		android_key = android_translations[translation]
+	ios_translations.each do |ios_key, translation|
+		android_key = android_translations.key(translation)
 		if android_key.nil?
 			missing_translations.push(ios_key)
 		end
@@ -115,7 +115,7 @@ def add_missing_translations(ios_localizables_path, missing_keys, languages)
 		ios_translations = get_hash_from_localizable(ios_localizables_path, ios_language_code)
 		android_translations = get_hash_from_xml(xml_file_path)
 		missing_keys.each do |key|
-			translation = ios_translations.key(key)
+			translation = ios_translations[key]
 			valid_android_key = get_snake_case_key(key)
 			valid_android_translation = replace_placeholders(translation)
 			already_exists = check_if_missing_key_already_exists(android_translations, valid_android_key)
@@ -132,7 +132,7 @@ def add_missing_translations(ios_localizables_path, missing_keys, languages)
 end
 
 def check_if_missing_key_already_exists(android_translations, missing_key)
-	return android_translations.values.include? missing_key
+	return android_translations.keys.include? missing_key
 end
 
 def get_swift_gen_key(key)
@@ -177,6 +177,13 @@ def replace_keys(compared_keys, ios_folder_path)
 	end
 end
 
+def replace_keys_from_file
+	file = File.read "./swift_gen_compared_keys.json"
+	compared_keys = JSON.parse(file)
+	binding.pry
+	replace_keys(compared_keys, "../product_mobile_ios_rider/**/*.swift")
+end
+
 android_resouces_path = "../product_mobile_android_rider/rider/src/main/res/values"
 languages = {
 	"es" => "es",
@@ -208,6 +215,7 @@ File.write("./missing_keys.json", JSON.pretty_generate(missing_translations_keys
 #### Include missing keys in XML before uploading to phraseapp
 add_missing_translations(ios_localizables_path, missing_translations_keys, languages)
 updated_android_translations = get_hash_from_xml("./final-strings-es.xml")
+File.write("./updated_android_translations.json", JSON.pretty_generate(updated_android_translations))
 
 updated_compared_keys = get_compared_keys(ios_old_translations, updated_android_translations)
 File.write("./final_compared_keys.json", JSON.pretty_generate(updated_compared_keys))
@@ -222,10 +230,11 @@ unless duplicated_keys.empty?
 end
 
 #### Push XML to phraseapp
-# system("phraseapp push")
+system("phraseapp push")
 
 #### Pull iOS Localizables.strings
-# system("phraseapp pull")
+system("phraseapp pull")
 
 #### Replace old keys with new ones in ios project
 replace_keys(swift_gen_compared_keys, ios_folder_path)
+replace_keys_from_file()
