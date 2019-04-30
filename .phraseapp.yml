@@ -3,7 +3,7 @@ phraseapp:
   project_id: b5bddf0e6f96f00570510eb5d494d49c
   push:
     sources:
-    - file: ./final-strings-<locale_code>.xml
+    - file: ./strings-<locale_code>.xml
       params:
         file_format: xml
   pull:

@@ -22,22 +22,20 @@ class PhraseApp
 
 		#### Get key => translation hash for android/ios translations
 		ios_old_translations = get_hash_from_localizable(@@ios_localizables_path, "es", true)
-		android_translations = get_hash_from_xml("./strings-es.xml")
+		android_translations = get_hash_from_xml("./initial-strings-es.xml")
 		File.write("./ios_translations.json", JSON.pretty_generate(ios_old_translations))
 
 		#### Get old_key => new_key hash for Localizables
 		compared_keys = get_compared_keys(ios_old_translations, android_translations)
 		missing_translations_keys = get_missing_translations_keys(ios_old_translations, android_translations)
-		File.write("./compared_keys.json", JSON.pretty_generate(compared_keys))
 		File.write("./missing_keys.json", JSON.pretty_generate(missing_translations_keys))
 
 		#### Include missing keys in XML before uploading to phraseapp
 		add_missing_translations(@@ios_localizables_path, missing_translations_keys, @@languages)
-		updated_android_translations = get_hash_from_xml("./final-strings-es.xml")
-		File.write("./updated_android_translations.json", JSON.pretty_generate(updated_android_translations))
+		updated_android_translations = get_hash_from_xml("./strings-es.xml")
 
 		updated_compared_keys = get_compared_keys(ios_old_translations, updated_android_translations)
-		File.write("./final_compared_keys.json", JSON.pretty_generate(updated_compared_keys))
+		File.write("./compared_keys.json", JSON.pretty_generate(updated_compared_keys))
 
 		#### SwiftGen transformation
 		swift_gen_compared_keys = get_swift_gen_compared_keys(updated_compared_keys)
@@ -79,7 +77,7 @@ class PhraseApp
 			android_language_code = language_code[1]
 			ios_language_code = language_code[0]
 			xml = get_xml_for_language(path, android_language_code)
-			save_xml(xml, "strings-#{ios_language_code}.xml")
+			save_xml(xml, "initial-strings-#{ios_language_code}.xml")
 		}
 	end
 
@@ -158,7 +156,7 @@ class PhraseApp
 
 	def self.add_missing_translations(ios_localizables_path, missing_keys, languages)
 		languages.each do |ios_language_code, android_language_code|
-			xml_file_path = "./strings-#{ios_language_code}.xml"
+			xml_file_path = "./initial-strings-#{ios_language_code}.xml"
 			xml_file = File.read(xml_file_path)
 			xml = Nokogiri::XML(xml_file)
 			ios_translations = get_hash_from_localizable(ios_localizables_path, ios_language_code, false)
@@ -172,7 +170,7 @@ class PhraseApp
 				node = "<string name=\"#{final_key}\">#{valid_android_translation}</string>\n"
 				xml.at('resources').add_child(node)
 			end
-			final_file_name = "final-strings-#{ios_language_code}.xml"
+			final_file_name = "strings-#{ios_language_code}.xml"
 			save_xml(xml,final_file_name)
 		end
 	end
@@ -230,4 +228,4 @@ end
 #phraseapp init --> .phraseapp.yml
 
 PhraseApp.replace_localizable_files
-PhraseApp.replace_strings_keys
+# PhraseApp.replace_strings_keys
