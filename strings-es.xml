@@ -1,0 +1,888 @@
+<?xml version="1.0"?>
+<resources>
+  <string name="my_places_screen_title">Mis sitios</string>
+  <string name="my_places_description_message">A&#xF1;ade destinos y pide m&#xE1;s r&#xE1;pido</string>
+  <string name="my_places_empty_state_title">A&#xFA;n no tienes favoritos.</string>
+  <string name="my_places_empty_state_description">Guarda aqu&#xED; los lugares que m&#xE1;s frecuentes como tu casa, tu trabajo...</string>
+  <string name="my_places_add_place">A&#xF1;adir favorito</string>
+  <string name="my_places_add_home">A&#xF1;adir casa</string>
+  <string name="my_places_add_work">A&#xF1;adir trabajo</string>
+  <string name="my_places_home">Casa</string>
+  <string name="my_places_work">Trabajo</string>
+  <string name="my_places_favorite">Favorito</string>
+  <string name="my_places_get_places_error">No hemos podido cargar tus favoritos</string>
+  <string name="my_places_get_places_error_retry">Reintentar</string>
+  <string name="my_places_title">A&#xF1;adir favorito</string>
+  <string name="my_places_suggestions_search_box_hint_work">&#xBF;D&#xF3;nde trabajas?</string>
+  <string name="my_places_suggestions_search_box_hint_home">&#xBF;D&#xF3;nde vives?</string>
+  <string name="my_places_suggestions_search_box_hint_favorite">Buscar direcci&#xF3;n</string>
+  <string name="my_places_add_field_name">Nombre del sitio</string>
+    <string name="my_places_add_private">Mostrar el nombre al conductor</string>
+    <string name="my_places_add_delete">Eliminar</string>
+    <string name="my_places_add_location_disclaimer">Ubicaci&#xF3;n privada; el conductor nunca sabr&#xE1; que este lugar es tu %1$s.</string>
+  <string name="my_places_delete_title">&#xBF;Est&#xE1;s seguro?</string>
+  <string name="my_places_delete_description">Est&#xE1;s a punto de eliminar uno de tus sitios favoritos</string>
+  <string name="my_places_delete_confirm_button">Eliminar</string>
+  <string name="my_places_delete_cancel_button">Cancelar</string>
+  <string name="my_places_leave_without_saving_title">Un momento...</string>
+  <string name="my_places_leave_without_saving_description">Est&#xE1;s a punto de salir sin guardar los cambios.</string>
+  <string name="my_places_leave_confirm_button">Salir</string>
+  <string name="my_places_leave_cancel_button">Seguir aqu&#xED;</string>
+  <string name="my_places_instructions_address">Direcci&#xF3;n</string>
+  <string name="my_places_instructions_number">N&#xFA;m.</string>
+  <string name="my_places_instructions_instructions">Instrucciones al conductor</string>
+  <string name="my_places_get_location_from_suggestion_error">No pudimos obtener tu ubicaci&#xF3;n sugerida</string>
+  <string name="my_places_get_favorite_info_error">No pudimos obtener tu favorito </string>
+  <string name="my_places_delete_favorite_error">No pudimos eliminar favorito, reintenta </string>
+  <string name="my_places_create_favorite_error">No hemos podido crear favorito, reintenta </string>
+  <string name="my_places_update_favorite_error">No pudimos actualizar favorito, reintenta</string>
+  <string name="my_places_no_location_found">Ning&#xFA;n sitio encontrado.</string>
+  <string name="my_places_updated_favorite_message">&#xA1;Actualizado con &#xE9;xito!</string>
+  <string name="my_places_created_favorite_message">&#xA1;Creado con &#xE9;xito!</string>
+  <string name="my_places_removed_favorite_message">&#xA1;Eliminado con &#xE9;xito!</string>
+  <string name="my_places_map_indications">Establecer ubicaci&#xF3;n</string>
+  <string name="my_places_error_getting_address">Error al obtener la ubicaci&#xF3;n</string>
+    <string name="my_places_address_parametrized">%1$s %2$s, %3$s </string>
+  <string name="my_places_point_on_map_address_home">Casa, %1$s </string>
+  <string name="my_places_point_on_map_address_work">Trabajo, %1$s </string>
+  <string name="my_places_point_on_map_address">%1$s </string>
+  <string name="my_places_name_bottom_sheet_title">A&#xF1;adir favorito</string>
+  <string name="my_places_name_bottom_sheet_input_label">Nombre del sitio</string>
+  <string name="my_places_name_bottom_sheet_input_hint">Gimnasio, centro comercial...</string>
+
+  <string name="arrived_title">%1$s est&#xE1; esper&#xE1;ndote</string>
+  <string name="arrived_waiting_time_hours">%1$s:%2$s horas</string>
+  <string name="arrived_waiting_time_minutes">%1$s:%2$s min</string>
+
+  <string name="error_state">Error de carga</string>
+  <string name="error_generic_message">&#xA1;Oops! Parece que hubo un error con tu solicitud.</string>
+  <string name="error_generic_action">Pulsa aqu&#xED; para reintentarlo</string>
+
+    <string name="movo_paused_title">Viaje pausado</string>
+    <string name="movo_paused_time_title">Tiempo de pausa</string>
+    <string name="movo_paused_resume_button">Reanudar viaje</string>
+    <string name="movo_paused_finish_button">Finalizar viaje</string>
+
+    <string name="view_journey_infobox_hired_title">%1$s est&#xE1; de camino</string>
+    <string name="view_journey_infobox_hired_subtitle">%1$s min</string>
+    <string name="view_journey_infobox_hired_subtitle_for_list_distance">Est&#xE1; a %1s</string>
+    <string name="view_journey_infobox_arrived_title">%1s ha llegado</string>
+    <string name="view_journey_infobox_pickup_title">Hora estimada de llegada</string>
+    <string name="view_journey_infobox_pickup_title_distance">Distancia estimada</string>
+    <string name="view_journey_infobox_pickup_title_list">En camino hacia tu destino</string>
+    <string name="view_journey_infobox_pickup_eta">Llegar&#xE1;s a las %1s</string>
+    <string name="view_journey_infobox_pickup_distance_to">Distancia al destino %1s</string>
+    <string name="view_journey_infobox_pickup_distance_from">Distancia desde origen %1s</string>
+    <string name="view_journey_infobox_dropoff_title">Viaje terminado</string>
+    <string name="view_journey_infobox_not_found_title">No hay ning&#xFA;n conductor cerca de ti</string>
+    <string name="view_journey_infobox_not_found_subtitle">&#xBF;Qu&#xE9; quieres hacer?</string>
+    <string name="view_journey_infobox_no_show_title">Viaje cancelado</string>
+    <string name="view_journey_infobox_no_show_subtitle">El conductor lleg&#xF3; a tu ubicaci&#xF3;n pero no te ha encontrado</string>
+    <string name="view_journey_infobox_rider_cancel_title">Has cancelado el viaje</string>
+    <!-- Reservations -->
+    <string name="view_journey_infobox_reservation_from">De</string>
+    <string name="view_journey_infobox_reservation_to">A</string>
+    <string name="view_reservation_detail_infobox_title">Viaje reservado</string>
+
+    <string name="freerides_home_title">Promociones</string>
+    <string name="freerides_sharepromo_share_invite_title">Invitar a trav&#xE9;s de...</string>
+    <string name="freerides_myinvites_title">Mis invitaciones</string>
+    <string name="freerides_myinvites_invited">Invitado %s</string>
+    <string name="freerides_myinvites_pending">Pendiente</string>
+    <string name="freerides_myinvites_used">Utilizada</string>
+    <string name="freerides_myinvites_empty_state_title">Invitar amigos</string>
+    <string name="freerides_myinvites_empty_state_description">Comparte la mejor de forma de moverse por la ciudad.</string>
+    <string name="freerides_myinvites_greeting">Hola, %1$s:</string>
+    <string name="freerides_myinvites_invite_more">Invita a m&#xE1;s amigos</string>
+    <string name="freerides_myinvites_limit_reached">Ya invitaste a %1$d amigos</string>
+    <string name="freerides_helpinvites_title">C&#xF3;mo funcionan las invitaciones</string>
+    <string name="freerides_sharepromo_clipboard">C&#xF3;digo copiado</string>
+    <string name="freerides_sharepromo_share_cabify_without_invitation">&#xBF;Conoces Cabify? Descubre la mejor forma de moverte por la ciudad. Descarga la app en: https://cabify.com</string>
+    <string name="invitations_home_description">Cuando tus amigos se hayan registrado y realizado su primer viaje, obtendr&#xE1;s descuentos para tus pr&#xF3;ximos viajes.</string>
+    <string name="invitations_home_description_no_code">&#xA1;A qu&#xE9; esperas! Invita a tus amigos a descubrir la mejor forma de moverse por la ciudad...</string>
+    <string name="invitations_home_button">Invitar a amigos</string>
+    <string name="invitations_home_my_invitations">Mis invitaciones</string>
+    <string name="invitations_home_title">Viaja gratis</string>
+    <string name="invitations_home_subtitle">Invita a tus amigos y viaja por menos</string>
+    <string name="freerides_myinvites_existing_and_limit">%1$d/%2$d</string>
+
+    <string name="view_vouchers_add_code">A&#xF1;adir c&#xF3;digo</string>
+    <string name="view_vouchers_subtitle">A&#xF1;ade c&#xF3;digos y viaja por menos</string>
+
+    <string name="vouchers_empty_text">&#xBF;Tienes un c&#xF3;digo promocional? Introd&#xFA;celo y viaja de forma m&#xE1;s econ&#xF3;mica.</string>
+
+    <string name="view_vouchers_valid_to">\'V&#xE1;lido hasta\' dd/MM/yyyy</string>
+    <string name="view_vouchers_code">C&#xF3;digo %1$s</string>
+    <string name="view_vouchers_use_limit">M&#xE1;ximo %1$s viajes</string>
+    <string name="view_vouchers_max_ammount">Ahorro m&#xE1;ximo de %1$s por viaje</string>
+    <string name="view_vouchers_use_count">Te quedan %1$s viajes</string>
+    <string name="view_vouchers_used">Esta promoci&#xF3;n ya ha sido utilizada</string>
+    <string name="view_vouchers_expired">\'Esta promoci&#xF3;n expir&#xF3; el\' dd/MM/yyyy</string>
+    <string name="view_vouchers_add">A&#xF1;adir</string>
+    <string name="view_vouchers_add_title">&#xBF;Tienes un c&#xF3;digo?</string>
+    <string name="view_vouchers_add_label">Introduce tu c&#xF3;digo</string>
+    <string name="view_vouchers_add_success">C&#xF3;digo promocional a&#xF1;adido con &#xE9;xito</string>
+
+    <string name="view_vouchers_balance_title">Saldo acumulado: %1$s</string>
+    <string name="view_vouchers_balance_description">Viaja utilizando tu saldo, este ser&#xE1; descontado progresivamente en tus pr&#xF3;ximos viajes.</string>
+
+    <string name="vouchers_money_title_one_journey">%1$s de descuento en tu pr&#xF3;ximo viaje</string>
+    <string name="vouchers_money_title">%1$s de descuento en tus pr&#xF3;ximos %2$s viajes</string>
+    <string name="vouchers_percentage_title_one_journey">%1$s%% de descuento en tu pr&#xF3;ximo viaje</string>
+    <string name="vouchers_percentage_title">%1$s%% de descuento en tus pr&#xF3;ximos %2$s viajes</string>
+
+
+    <string name="journey_permissions_denied_message">Es necesario aceptar los permisos de ubicaci&#xF3;n para usar la aplicaci&#xF3;n</string>
+    <string name="journey_accept">OK</string>
+    <string name="journey_new_active_dialog_title">&#xA1;Nuevo viaje!</string>
+    <string name="journey_new_active_dialog_content">Ha comenzado un nuevo viaje, &#xBF;quieres verlo ahora?</string>
+    <string name="empty_origin_error">&#xBF;D&#xF3;nde ser&#xE1; el punto de recogida?</string>
+    <string name="journey_localization_error">No hemos podido ubicarte</string>
+    <string name="share_journey_title">&#xA1;Ey! Sigue mi viaje en Cabify</string>
+    <string name="cancel_confirmation_title">&#xBF;Est&#xE1;s seguro?</string>
+    <string name="cancel_confirmation_description_asap_might_charge">La cancelaci&#xF3;n de este viaje puede suponer el cobro del importe m&#xED;nimo.</string>
+    <string name="cancel_confirmation_description_reservation_undefined_charge">Tu reserva ser&#xE1; cancelada.</string>
+    <string name="cancel_confirmation_yes">S&#xED;</string>
+    <string name="cancel_confirmation_no">No</string>
+    <string name="journey_creation_error_unknown">&#xA1;Oops! Algo fall&#xF3; al solicitar tu viaje</string>
+    <string name="share_journey">Compartir</string>
+    <string name="journey_creation_popup_error_negative">Ahora no</string>
+    <string name="return_driver_detail_dialog">Volver</string>
+
+    <string name="movo_rating_title">Fin del viaje</string>
+    <string name="movo_rating_cancel_button">Ahora no</string>
+    <string name="movo_rating_description">%1$s, valora tu experiencia</string>
+    <string name="movo_rating_send_rating">Valorar</string>
+
+  <string name="state_out_of_operation_zone_title">Fuera del &#xE1;rea de operaciones</string>
+  <string name="state_out_of_operation_zone_subtitle">%1$s, lo sentimos, Cabify no est&#xE1; disponible en esta zona.</string>
+  <string name="state_out_of_operation_zone_action">Pedir desde otra ubicaci&#xF3;n</string>
+  <string name="state_out_of_operation_zone_country_title">Elige una ciudad</string>
+
+    <string name="drop_off_may_have_tolls">En esta ruta pueden aplicar cargos por peaje</string>
+    <string name="drop_off_discount_applied">Descuento aplicado: %1$s</string>
+    <string name="drop_off_send_rating">Enviar valoraci&#xF3;n</string>
+    <string name="drop_off_not_now">Ahora no</string>
+    <string name="drop_off_tips_title">&#xBF;Quieres dar una propina a %1$s?</string>
+    <string name="drop_off_tips_success">Diste una propina a tu conductor. &#xA1;Gracias!</string>
+
+    <string name="labels_title">Concepto de viaje</string>
+    <string name="labels_suggested_title">Centros de coste sugeridos</string>
+    <string name="searching">Buscando...</string>
+    <string name="labels_search_error_title">Error al cargar</string>
+    <string name="labels_search_error_subtitle">Algo ha ido mal al realizar tu solicitud</string>
+    <string name="labels_search_error_action">Pedir viaje de todas formas</string>
+    <string name="labels_confirmation_confirm">Confirmar</string>
+    <string name="labels_search_hint">Busca tu centro de coste</string>
+    <string name="labels_search_title">Resultados de la b&#xFA;squeda</string>
+    <string name="labels_search_empty_results">No hay resultados para \"%1$s\"</string>
+    <string name="labels_more_info">m&#xE1;s info</string>
+    <string name="labels_confirm">Entendido</string>
+    <string name="labels_edit">Editar</string>
+    <string name="labels_add">A&#xF1;adir</string>
+    <string name="labels_selected_title">Centro de coste</string>
+    <string name="labels_reason_title">Motivo de viaje</string>
+    <string name="labels_reason_hint">Indica el motivo por el cual realizas el viaje.\nPor ejemplo: Comida de trabajo.</string>
+    <string name="labels_breadcrumbs">Paso %1$d de %2$d</string>
+
+    <string name="onboarding_go_button">Vamos</string>
+    <string name="onboarding_skip_button">Saltar</string>
+    <string name="onboarding_movo_go_button">Ir a Movo</string>
+    <string name="onboarding_step_first_title">Pide un viaje.</string>
+    <string name="onboarding_step_first_subtitle">Pasaremos a buscarte donde y cuando quieras.</string>
+    <string name="onboarding_step_second_title">En segundos.</string>
+    <string name="onboarding_step_second_subtitle">&#xA1;M&#xE1;s sencillo! Te sugerimos tus destinos habituales.</string>
+    <string name="onboarding_step_third_title">Sin sorpresas.</string>
+    <string name="onboarding_step_third_subtitle">Siempre ver&#xE1;s el precio antes de pedir tu Cabify.</string>
+
+  <string name="reservation_format_week_day_numeric_day_and_month">"'el' EEEE, d LLLL 'a las' HH:mm"</string>
+  <string name="reservation_format_today_numeric_day_and_month">"'hoy', EEEE d MMMM 'a las' HH:mm"</string>
+  <string name="reservation_format_tomorrow_numeric_day_and_month">"'ma&#xF1;ana', EEEE d MMMM 'a las' HH:mm"</string>
+    <string name="reservation_confirmation_message">Tu viaje a %1$s, para %2$s, est&#xE1; reservado.</string>
+  <string name="reservation_confirmation_remember_message">%1$s, puedes consultar los detalles de tu reserva en la secci&#xF3;n &#x2018;Viajes&#x2019;. En cuanto se asigne un conductor, tambi&#xE9;n podr&#xE1;s ver sus datos.</string>
+  <string name="reservation_confirmation_button">Entendido</string>
+
+  <string name="reservation_confirmation_header">Genial, %1$s</string>
+  <string name="reservation_confirmation_title">Tu viaje ya est&#xE1; reservado</string>
+  <string name="reservation_confirmation_date">EEEE, dd \'de\' MMMM</string>
+  <string name="reservation_confirmation_product_name">Viajar&#xE1;s en %1$s</string>
+  <string name="reservation_confirmation_caption">Puedes consultar los detalles de tu reserva en la secci&#xF3;n &#x2018;Viajes&#x2019;. En cuanto se te asigne un conductor podr&#xE1;s ver sus datos. </string>
+
+    <string name="movo_active_journey_alert_title">Tienes un viaje activo</string>
+    <string name="movo_active_journey_alert_message">Cancela tu reserva o finaliza tu viaje para abandonar Movo</string>
+    <string name="movo_active_journey_alert_action_message">Entendido</string>
+
+
+    <string name="hired_cancel_dialog_title">&#xBF;Seguro que quieres cancelar?</string>
+    <string name="hired_cancel_dialog_description">Tu conductor est&#xE1; en camino hacia el punto de recogida, cancelar ahora tiene un coste.</string>
+    <string name="hired_cancel_dialog_accept_button">Mantener viaje</string>
+    <string name="hired_cancel_dialog_cancel_button">Cancelar viaje</string>
+
+
+    <string-array name="chat_suggested_messages">
+        <item>No te veo</item>
+        <item>Ahora voy</item>
+        <item>Tardo 5 min.</item>
+        <item>De acuerdo</item>
+        <item>Ll&#xE1;mame</item>
+    </string-array>
+    <string name="chat_contact_button">Contactar</string>
+
+  <string name="bottom_alert_button">A&#xF1;adir</string>
+
+  <string name="help_title">Ayuda</string>
+  <string name="help_subtitle">Resuelve tus dudas sobre Cabify</string>
+  <string name="help_footer_description">Cabify opera en</string>
+  <string name="help_version">Versi&#xF3;n %1$s</string>
+  <string name="help_image_chooser_title">Selecciona un archivo</string>
+
+    <string name="admin_title">Admin</string>
+    <string name="admin_subtitle">Configure la aplicaci&#xF3;n como lo desee</string>
+    <string name="admin_featureflag_title">Feature flags</string>
+    <string name="admin_featureflag_subtitle">Toque para cambiar los valores</string>
+    <string name="admin_featureflag_item">%1$s - %2$b</string>
+    <string name="admin_analyticsevents_title">Analytics events</string>
+    <string name="admin_analyticsevents_subtitle">Todos los eventos rastreados se muestran aqu&#xED;</string>
+
+    <string name="admin_hosts_title">Hosts panel</string>
+    <string name="admin_hosts_subtitle">Aqu&#xED; se muestran los entornos configurados</string>
+    <string name="admin_host_title">Environment configuration</string>
+    <string name="admin_host_subtitle">Aqu&#xED; puedes ver los parametros para este entorno</string>
+    <string name="admin_hosts_empty">Todav&#xED;a no se ha a&#xF1;adido ning&#xFA;n entorno</string>
+
+    <string name="admin_host_name">Name</string>
+    <string name="admin_host_host">Host</string>
+    <string name="admin_host_url">Public URL</string>
+    <string name="admin_host_oauth">oAuth client ID</string>
+    <string name="admin_host_socket">States socket URL</string>
+    <string name="admin_host_driver_socket">Driver socket URL</string>
+    <string name="admin_host_user_aggent">User agent</string>
+    <string name="admin_host_duplicated_name">This name already exists</string>
+    <string name="admin_host_unknown_error">We can\'t store the current host, check all the params</string>
+
+    <string name="admin_logs_title">Logs panel</string>
+    <string name="admin_logs_subtitle">Aqu&#xED; se muestran los logs lanzados por la aplicaci&#xF3;n</string>
+
+    <string name="admin_firebase_device_token_title">Firebase device token</string>
+    <string name="admin_firebase_device_token_subtitle">Aqu&#xED; se muestra el token del dispositivo. Toque para copiar.</string>
+
+    <string name="admin_firebaseexperiments_title">Firebase experiments</string>
+    <string name="admin_firebaseexperiments_subtitle">Experimentos A/B de Firebase</string>
+    <string name="admin_firebaseexperiments_variant">variante=[%1$s]</string>
+
+    <string name="verification_options_title">Paga en %s</string>
+    <string name="verification_options_message">Por tu seguridad y la del conductor debes verificar tu identidad.</string>
+    <string name="verification_options_help">&#xBF;C&#xF3;mo funciona el pago en %s?</string>
+
+    <string name="verification_options_iddocument_title">Documento de identidad</string>
+    <string name="verification_options_iddocument_subtitle">Saca una foto a tu documento para verificar tu identidad.</string>
+    <string name="verification_options_iddocument_status_fail">No verificado</string>
+
+    <string name="verification_country_selector_title">Pa&#xED;s de tu documento</string>
+    <string name="verification_document_type_selector_title">Elige tu documento</string>
+
+    <string name="verification_mrz_afirmative_button">S&#xED;, la tiene</string>
+    <string name="verification_mrz_negative_button">No, no la tiene</string>
+
+    <string name="verification_mrz_title">&#xBF;Tiene tu %s esta zona num&#xE9;rica?</string>
+    <string name="verification_mrz_subtitle">Puedes encontrarla en la parte frontal o trasera.</string>
+
+    <string name="verification_upload_title">Verificando tu identidad</string>
+    <string name="verification_upload_sending">Cargando las im&#xE1;genes&#x2026;</string>
+    <string name="verification_upload_analyzing">Analizando tus datos&#x2026;</string>
+
+    <string name="verification_camera_title">Captura tu documento</string>
+    <string name="verification_photo_front_side_title">Parte frontal</string>
+    <string name="verification_photo_front_side_description">Coloca tu %1s por la parte frontal en la que tiene la fotograf&#xED;a</string>
+    <string name="verification_photo_back_side_title">Parte trasera</string>
+    <string name="verification_photo_back_side_description">Coloca tu %1s por la parte trasera en la que tiene la zona num&#xE9;rica</string>
+
+    <string name="verification_generic_error_message">&#xA1;Vaya! Parece que algo no ha ido bien al realizar tu solicitud.</string>
+
+    <string name="verification_generic_error_button">Entendido</string>
+
+    <string name="verification_capture_timeout_title">No pudimos detectar el documento</string>
+    <string name="verification_capture_timeout_description">Lo sentimos, pero no hemos conseguido detectar un documento. Si necesitas viajar ahora puedes hacerlo con otra forma de pago</string>
+    <string name="verification_capture_timeout_retry">Intentar de nuevo</string>
+    <string name="verification_capture_timeout_try_later">Intentar m&#xE1;s tarde</string>
+
+    <string name="verification_capture_license_error">Oops! Ha habido alg&#xFA;n problema.\nNo podemos realizar la captura de tu documento de identidad.</string>
+
+    <string name="verification_cancel_title">&#xBF;Est&#xE1;s seguro?</string>
+    <string name="verification_cancel_message">Si sales del proceso no podr&#xE1;s guardar tu m&#xE9;todo de pago.</string>
+    <string name="verification_cancel_afirmative">Si, salir</string>
+    <string name="verification_cancel_negative">No, continuar</string>
+
+    <string name="verification_errors_title">Parece que&#x2026;</string>
+
+
+    <string name="menu_myaccount">Mi cuenta</string>
+    <string name="menu_payment">M&#xE9;todos de pago</string>
+    <string name="menu_previous_journeys">Viajes</string>
+    <string name="menu_help">Ayuda</string>
+    <string name="menu_freeriders">Promociones</string>
+    <string name="menu_new_journey">Nuevo viaje</string>
+    <string name="menu_journeys_paid">Viajes pagados por tu empresa</string>
+    <string name="accounts">Cuentas</string>
+    <string name="menu_invitations">Viaja gratis</string>
+    <string name="menu_admin">Admin</string>
+
+    <string name="running_title">Viaje activo</string>
+    <string name="running_finish_button">Terminar trayecto</string>
+    <string name="running_time_hours">%1$s:%2$s hours</string>
+    <string name="running_time_minutes">%1$s:%2$s min</string>
+    <string name="running_preparation_free_time_title">Tiempo gratuito de preparaci&#xF3;n</string>
+    <string name="running_preparation_helmet_warning_title">No olvides ponerte el casco</string>
+    <string name="running_preparation_helmet_warning_description">Lo encontrar&#xE1;s dentro del maletero</string>
+    <string name="running_out_of_area_title">Fuera del &#xE1;rea de operaci&#xF3;n</string>
+    <string name="running_out_of_area_description">Coste adicional de %1$s al terminar</string>
+    <string name="running_journey_time_title">Tiempo de viaje</string>
+
+  <string name="permissions_camera_main_message">%s, &#xBF;nos das permiso para acceder a tu c&#xE1;mara?</string>
+  <string name="permissions_camera_main_message_not_parametrized">&#xBF;Nos das permiso para acceder a la c&#xE1;mara?</string>
+  <string name="permissions_camera_secondary_message">Para tomar fotos y escanear documentos, necesitamos acceder a tu c&#xE1;mara.</string>
+  <string name="permissions_gallery_main_message">%s, &#xBF;nos das permiso para acceder a la galer&#xED;a?</string>
+  <string name="permissions_gallery_main_message_not_parametrized">&#xBF;Nos das permiso para acceder a la galer&#xED;a?</string>
+  <string name="permissions_gallery_secondary_message">As&#xED; podr&#xE1;s elegir la foto en la que mejor salgas y usarla como perfil en Cabify.</string>
+    <string name="permissions_location_main_message_variant_a">%s, necesitamos tu permiso de localizaci&#xF3;n.</string>
+  <string name="permissions_location_main_message_not_parametrized_variant_a">Necesitamos tu permiso de localizaci&#xF3;n.</string>
+  <string name="permissions_location_secondary_message_variant_a">Solo lo usaremos para encontrar el conductor m&#xE1;s cercano a tu ubicaci&#xF3;n.</string>
+  <string name="permissions_accept_button_location_variant_a">Aceptar</string>
+  <string name="permissions_deny_button">Ahora no</string>
+  <string name="permissions_accept_button">S&#xED;</string>
+  <string name="permissions_permanently_denied_message">Permiso denegado. Si quieres revertirlo, revisa los ajustes de tu tel&#xE9;fono.</string>
+  <string name="permissions_permanently_denied_action_button">Ir a Ajustes</string>
+
+    <string name="confirm_search_loading">Localizando&#x2026;</string>
+    <string name="confirm_title">&#xBF;Este es tu punto de origen?</string>
+    <string name="confirm_pickup">Confirmar</string>
+    <string name="confirm_pickup_suggestions_title">Confirmar punto de origen</string>
+    <string name="confirm_pickup_suggestions_hint">&#xBF;D&#xF3;nde te buscamos?</string>
+    <string name="confirm_pickup_floating_label">Puedes ajustar tu posici&#xF3;n en el mapa</string>
+    <string name="confirm_pickup_outside_of_operational_area">Fuera del &#xE1;rea de operaci&#xF3;n</string>
+    <string name="confirm_pickup_cabify_not_allow_this_zone">Cabify no esta disponible en esta zona</string>
+    <string name="confirm_pickup_return_to_my_actual_ubication">Volver a mi ubicaci&#xF3;n actual</string>
+
+    <string name="confirm_price_button">Pedir viaje</string>
+    <string name="confirm_price_location_title">El precio de tu viaje ha variado tras modificar el punto de origen</string>
+    <string name="confirm_price_expired_title">El precio de tu viaje ha variado</string>
+    <string name="confirm_price_expired_surge_title">El precio de tu viaje ha variado debido a un aumento de la demanda</string>
+
+    <string name="splash_low_gps_signal">Se&#xF1;al de GPS d&#xE9;bil</string>
+    <string name="we_are_carboun_neutral">Somos neutros en carbono</string>
+
+  <string name="driver_rating_title">%1$s, valora a tu conductor</string>
+  <string name="feedback_title">Comentarios</string>
+  <string name="feedback_hint">Ay&#xFA;danos a mejorar</string>
+  <string name="feedback_send_button">Enviar comentarios</string>
+  <string name="feedback_write_comment_button">Deja un comentario</string>
+  <string name="feedback_edit_comment_button">Editar comentario</string>
+  <string name="feedback_reason_arrival_time">Hora de llegada</string>
+  <string name="feedback_reason_driving_skills">Conducci&#xF3;n</string>
+  <string name="feedback_reason_service_from_driver">Servicio del conductor</string>
+  <string name="feedback_reason_car_quality">Estado del veh&#xED;culo</string>
+  <string name="feedback_reason_journey_route">Ruta del trayecto</string>
+    <string name="feedback_send_error">Parece que no se pudo enviar. Por favor, int&#xE9;ntalo m&#xE1;s tarde.</string>
+
+    <string name="previous_journeys_title">Viajes</string>
+    <string name="previous_journeys_previous_tab">Anteriores</string>
+    <string name="previous_journeys_upcoming_tab">Pr&#xF3;ximos</string>
+    <string name="previous_journeys_canceled">Cancelado</string>
+    <string name="previous_journeys_title_filter">Selecciona un mes</string>
+    <string name="previous_journeys_bottom_filter">Aceptar</string>
+    <string name="previous_journeys_empty_title">A&#xFA;n no has viajado con nosotros.</string>
+    <string name="previous_journeys_empty_subtitle">Descubre una nueva forma de moverte por la ciudad.</string>
+    <!-- previous journey detail -->
+    <string name="previous_journeys_from_label">De</string>
+    <string name="previous_journeys_to_label">A</string>
+    <string name="previous_journeys_driver_label">Conductor</string>
+    <string name="previous_journeys_distance_label">Distancia</string>
+    <string name="previous_journeys_time_label">Tiempo de viaje</string>
+    <string name="previous_journeys_price_label">Coste total</string>
+    <string name="previous_journeys_new_price_label">Precio total</string>
+    <string name="previous_journeys_report_issue">Reportar un problema</string>
+    <string name="previous_journeys_carboun_neutral_label">Todo el CO2 de este viaje ser&#xE1; compensado por Cabify mediante la protecci&#xF3;n de &#xE1;rboles en la Amazon&#xED;a.</string>
+    <string name="previous_journeys_detail_terminated_status">Viaje finalizado</string>
+    <string name="previous_journeys_detail_canceled_status">Viaje cancelado</string>
+    <string name="previous_journeys_list_date">El %1$s de %2$s %3$s a las %4$s</string>
+    <string name="previous_journeys_detail_date_terminated">El %1$s de %2$s %3$s a las %4$s </string>
+    <string name="previous_journeys_movo">Movo</string>
+    <string name="previous_journeys_default_origin">Origen</string>
+    <string name="previous_journeys_default_destination">Destino</string>
+    <plurals name="previous_journeys_journey_distance_plural">
+        <item quantity="one">%1$s kil&#xF3;metro</item>
+        <item quantity="other">%1$s kil&#xF3;metros</item>
+    </plurals>
+    <plurals name="previous_journeys_journey_time_plural">
+        <item quantity="one">%1$s minuto</item>
+        <item quantity="other">%1$s minutos</item>
+    </plurals>
+
+    <string name="movo_stop_confirmation_title">Antes de irte</string>
+    <string name="movo_stop_confirmation_park_title">Aparca correctamente</string>
+    <string name="movo_stop_confirmation_park_description">Verifica la zona y tu posici&#xF3;n</string>
+    <string name="movo_stop_confirmation_finish_button">Finalizar viaje</string>
+    <string name="movo_stop_confirmation_pause_button">Pausar viaje</string>
+
+
+    <string name="login_retry_positive">OK</string>
+
+    <string name="login_title">Bienvenido a Cabify</string>
+    <string name="login_subtitle">Reg&#xED;strate o inicia sesi&#xF3;n con tu email</string>
+
+    <string name="add_account_title">A&#xF1;adir nueva cuenta</string>
+    <string name="add_account_subtitle">Puede ser personal o corporativa</string>
+
+    <string name="login_email_hint">Introduce tu email</string>
+
+    <string name="login_password_hint">Tu contrase&#xF1;a</string>
+    <string name="login_recover_password">He olvidado mi contrase&#xF1;a</string>
+    <string name="login_password_title">Inicia sesi&#xF3;n</string>
+
+    <string name="login_privacy_policy">Pol&#xED;tica de privacidad</string>
+    <string name="login_terms_of_use">Condiciones de uso general</string>
+    <string name="login_policy_and_terms_advisory">Si contin&#xFA;as aceptas nuestra %1$s y las %2$s</string>
+    <string name="login_continue_button">Continuar</string>
+
+    <string name="pass_recovery_validation_code_explanation">Ya casi estamos, tan solo tienes que introducir el c&#xF3;digo de 4 d&#xED;gitos que te hemos enviado a %1$s</string>
+
+    <string name="pass_recovery_validation_code_hint">Introduce el c&#xF3;digo</string>
+    <string name="pass_recovery_no_code_received_link">No recib&#xED; ning&#xFA;n c&#xF3;digo</string>
+    <string name="pass_recovery_validation_code_wrong">El c&#xF3;digo no es correcto</string>
+    <string name="pass_recovery_validation_code_request_error">&#xA1;Oops! Parece que hubo un error con la generaci&#xF3;n de tu c&#xF3;digo. Prueba de nuevo</string>
+
+    <string name="pass_recovery_new_pass_confirmation_form_field">Restablecer contrase&#xF1;a</string>
+    <string name="pass_recovery_new_pass_form_field">Nueva contrase&#xF1;a</string>
+    <string name="pass_recovery_new_pass_screen_title">Repite la nueva contrase&#xF1;a</string>
+    <string name="pass_recovery_unknown_error">&#xA1;Oops! Parece que hay un error de conexi&#xF3;n. Por favor, int&#xE9;ntalo de nuevo.</string>
+
+    <string name="pass_recovery_resend_validation_code_confirmation_dialog_title">&#xBF;Generar otro c&#xF3;digo?</string>
+    <string name="pass_recovery_resend_validation_code_confirmation_dialog_message">Te enviaremos un nuevo c&#xF3;digo y el anterior ser&#xE1; invalidado. &#xBF;Est&#xE1;s seguro?</string>
+
+    <string name="pass_recovery_new_pass_not_matches">La contrase&#xF1;a no coincide</string>
+    <string name="new_pass_insecure_error">Tu contrase&#xF1;a es demasiado corta</string>
+
+    <string name="signup_title">Crea tu cuenta</string>
+    <string name="signup_name_hint">Nombre</string>
+    <string name="signup_last_name_hint">Apellidos</string>
+    <string name="signup_password_hint">Contrase&#xF1;a</string>
+
+    <string name="signup_loading_title">Guardando tus datos</string>
+    <string name="signup_loading_subtitle">Solo ser&#xE1;n unos segundos</string>
+
+    <string name="signup_confirmation_success_title">&#xA1;Bien %1s!\nTu cuenta ya est&#xE1; creada</string>
+    <string name="signup_confirmation_success_subtitle">Para poder viajar tienes que elegir una forma de pago, puedes hacerlo ahora o dejarlo para m&#xE1;s tarde.</string>
+
+    <string name="signup_confirmation_fail_title">El n&#xFA;mero de tel&#xE9;fono ya est&#xE1; registrado</string>
+    <string name="signup_confirmation_fail_subtitle">Inicia sesi&#xF3;n con otro email o prueba con otro n&#xFA;mero de tel&#xE9;fono</string>
+
+    <string name="signup_confirmation_to_app">Probar la app</string>
+    <string name="signup_confirmation_skip_to_app">Saltar</string>
+    <string name="signup_confirmation_to_payment_method">Elegir m&#xE9;todo de pago</string>
+
+    <string name="signup_confirmation_another_email">Probar con otro email</string>
+    <string name="signup_confirmation_another_phone">Probar con otro tel&#xE9;fono</string>
+
+    <string name="personalize_music_header_title">&#xBF;Quieres escuchar m&#xFA;sica?</string>
+  <string name="personalize_music_edit_text_hint">Dinos la frecuencia de tu emisora favorita</string>
+    <string name="personalize_call_header_title">&#xBF;Quieres que te llame el conductor?</string>
+  <string name="personalize_call_save_button">Guardar</string>
+  <string name="personalize_door_header_title">&#xBF;Quieres que te abran la puerta?</string>
+  <string name="personalize_door_save_button">Guardar</string>
+  <string name="personalize_ac_header_title">&#xBF;Quieres aire acondicionado?</string>
+    <string name="personalize_ac_save_button">Guardar</string>
+  <string name="personalize_conversation_header_title">&#xBF;Prefieres conversaci&#xF3;n o silencio?</string>
+  <string name="personalize_conversation_save_button">Guardar</string>
+
+  <string name="notification_journey_channel_description">Notificaciones sobre tus viajes en Cabify</string>
+  <string name="notification_journey_hire">Buscando un conductor cerca de %1$s</string>
+  <string name="notification_journey_hire_simple">Buscando un conductor</string>
+    <string name="notification_journey_hired">Conductor asignado a %1$s</string>
+  <string name="notification_journey_hired_simple">Conductor asignado</string>
+  <string name="notification_journey_not_found">No pudimos encontrar un conductor cerca de %1$s</string>
+  <string name="notification_journey_not_found_simple">No hemos podido encontrar un conductor</string>
+  <string name="notification_journey_arrived">Tu conductor est&#xE1; esperando en %1$s</string>
+  <string name="notification_journey_arrived_simple">Tu conductor est&#xE1; esper&#xE1;ndote</string>
+  <string name="notification_journey_no_show">No te hemos localizado en %1$s</string>
+  <string name="notification_journey_no_show_simple">No pudimos localizarte</string>
+  <string name="notification_journey_rider_cancel_from">Cancelaste el viaje desde %1$s</string>
+  <string name="notification_journey_rider_cancel_to">Cancelaste el viaje a %1$s</string>
+  <string name="notification_journey_rider_cancel_simple">Has cancelado el viaje</string>
+  <string name="notification_journey_driver_cancel_from">El conductor ha cancelado el viaje desde %1$s</string>
+  <string name="notification_journey_driver_cancel_to">El conductor ha cancelado el viaje hacia %1$s</string>
+  <string name="notification_journey_driver_cancel_simple">El conductor cancel&#xF3; el viaje</string>
+  <string name="notification_journey_pickup_to">En camino hacia tu destino %1$s</string>
+  <string name="notification_journey_pickup">En camino hacia tu destino</string>
+  <string name="notification_journey_dropoff">&#xA1;Viaje finalizado! Has llegado a\' %1$s</string>
+  <string name="notification_journey_dropoff_simple">&#xA1;Viaje finalizado! Ya has llegado</string>
+  <string name="call_driver_action">Llamar</string>
+  <string name="free_cancel_action">Cancelar gratis</string>
+  <string name="cancel_journey_action">Cancelar viaje</string>
+  <string name="share_journey_action">Compartir viaje</string>
+  <string name="rate_driver_action">Valorar conductor</string>
+  <string name="keep_searching_action">Seguir buscando</string>
+
+  <string name="edit_journey_title">Tu viaje</string>
+  <string name="edit_journey_from">De</string>
+  <string name="edit_journey_to">A</string>
+  <string name="edit_journey_origin">Origen</string>
+  <string name="edit_journey_destination">Destino</string>
+  <string name="edit_journey_your_location">Tu ubicaci&#xF3;n</string>
+  <string name="edit_journey_not_found">No hemos encontrado resultados</string>
+  <string name="edit_journey_set_on_map">Elegir ubicaci&#xF3;n en el mapa</string>
+  <string name="edit_journey_location_error">No hemos podido ubicarte</string>
+  <string name="edit_journey_serching">Buscando \"%s\"</string>
+  <string name="edit_journey_map_explanation">Mueve el marcador para establecer el %s</string>
+  <string name="edit_journey_map_confirm">Confirmar</string>
+  <string name="edit_journey_suggested_destinations_label">Destinos sugeridos</string>
+  <string name="edit_journey_search_results_label">Resultados de la b&#xFA;squeda</string>
+
+    <string name="not_found_keep_searching_action">Seguir buscando</string>
+    <string name="not_found_cancel_action">Cancelar viaje</string>
+
+    <string name="not_found_5_minutes_option">5 minutos</string>
+    <string name="not_found_10_minutes_option">10 minutos</string>
+    <string name="not_found_15_minutes_option">15 minutos</string>
+    <string name="not_found_title">&#xBF;Cu&#xE1;nto tiempo puedes esperar?</string>
+    <string name="not_found_subtitle">Contin&#xFA;as avanzando en la fila pero necesitamos un poco m&#xE1;s de tiempo para encontrar a tu conductor.</string>
+
+    <string name="predictions_error_title">Predicciones no disponibles</string>
+    <string name="predictions_error_retry">Reintentar</string>
+    <string name="predictions_permissions_denied_error">%1s, para poder ofrecerte un mejor servicios necesitamos que actives tus permisos de localizaci&#xF3;n.</string>
+    <string name="predictions_permissions_denied_error_button">Activar permisos</string>
+    <string name="predictions_gps_disabled_error">%1s, necesitamos que actives el GPS de tu dispositivo para ofrecerte un mejor servicio</string>
+    <string name="predictions_gps_disabled_error_button">Activar GPS</string>
+    <string name="predictions_searchbox_hint">&#xBF;A d&#xF3;nde quieres ir?</string>
+    <string name="predictions_suggestions_title">Destinos sugeridos</string>
+
+  <string name="profile_title">Mis datos</string>
+  <string name="profile_header_subtitle">Toda tu informaci&#xF3;n personal</string>
+  <string name="view_profile_receive_promotions">Recibir promociones</string>
+  <string name="view_profile_change_password">Cambiar contrase&#xF1;a</string>
+  <string name="view_profile_logout">Cerrar sesi&#xF3;n</string>
+    <string name="profile_save_success">Guardado con &#xE9;xito</string>
+  <string name="profile_save_error">No hemos podido guardar tu informaci&#xF3;n</string>
+    <string name="edit_profile_unsaved_changes_alert_title">Un momento&#x2026;</string>
+  <string name="edit_profile_unsaved_changes_alert_body">Est&#xE1;s a punto de salir sin guardar los cambios.</string>
+  <string name="profile_name">Nombre</string>
+  <string name="profile_surname">Apellido</string>
+    <string name="profile_phone_prefix">Prefijo</string>
+  <string name="profile_phone_number">N&#xFA;mero</string>
+  <string name="profile_national_id">Documento de identidad</string>
+  <string name="profile_email">Email</string>
+    <string name="profile_loyalty_program">Programa de fidelizaci&#xF3;n</string>
+  <string name="profile_avatar_source_selector_bottom_sheet_dialog_title">Toca ponerse guapos</string>
+  <string name="profile_avatar_source_selector_bottom_sheet_dialog_subtitle">Selecciona una foto para tu perfil. Coloca bien tu pelo, sonr&#xED;e y...</string>
+    <string name="profile_error_avatar_picker">&#xA1;Oops! Hubo un error con la foto seleccionada. Int&#xE9;ntalo de nuevo.</string>
+  <string name="profile_phone_prefix_bottom_sheet_title">Elige un pa&#xED;s</string>
+  <string name="profile_phone_prefix_bottom_sheet_other_countries">Otros pa&#xED;ses</string>
+    <string name="profile_loyalty_bottom_sheet_title">Programa de fidelizaci&#xF3;n</string>
+  <string name="profile_loyalty_bottom_sheet_no_program">Sin programa de fidelizaci&#xF3;n</string>
+  <string name="change_password_screen_title">Cambiar contrase&#xF1;a</string>
+  <string name="change_password_current_password">Contrase&#xF1;a actual</string>
+  <string name="change_password_new_password">Nueva contrase&#xF1;a</string>
+  <string name="change_password_new_password_confirmation">Repetir nueva contrase&#xF1;a</string>
+  <string name="validation_phone_fail">No hemos podido validar su n&#xFA;mero de tel&#xE9;fono.</string>
+
+  <string name="map_marker_start">De</string>
+  <string name="map_marker_end">A</string>
+  <string name="sos_button">SOS</string>
+  <string name="sos_sms_body">Estoy en una situaci&#xF3;n de emergencia y necesito ayuda inmediata. Soy %1$s y estoy en un Cabify, %2$s %3$s con el conductor %4$s. Mi ubicaci&#xF3;n exacta y la ruta en %5$s.</string>
+
+    <string name="movo_generic_error_booking_title">Ups!</string>
+    <string name="movo_generic_error_booking_description">Algo no ha ido bien y no hemos podido confirmar la reserva del veh&#xED;culo</string>
+    <string name="movo_generic_error_booking_action">Entendido</string>
+    <string name="movo_book_selected_payment_method_error_title">Forma de pago no aceptada</string>
+    <string name="movo_book_selected_payment_method_error_message">Por favor, elige una forma de pago v&#xE1;lida para moverte en Movo</string>
+    <string name="movo_book_selected_payment_method_error_positive_action">Elegir forma de pago</string>
+    <string name="movo_book_selected_payment_method_error_negative_action">Cancelar reserva</string>
+    <string name="unavailable_asset_description">Lo sentimos, pero este veh&#xED;culo est&#xE1; reservado por otra persona. Int&#xE9;ntalo de nuevo con otro veh&#xED;culo.</string>
+    <string name="unavailable_asset_ok">Entendido</string>
+    <string name="movo_book_max_journeys_error_message">No puedes reservar este veh&#xED;culo porque ya tienes un viaje activo</string>
+
+  <string name="journey_driver_message_title">Mensaje para el conductor</string>
+    <string name="journey_driver_message_input_hint">Si quieres, aqu&#xED; puedes incluir informaci&#xF3;n adicional (ubicaci&#xF3;n exacta, detalles de otro pasajero...)</string>
+
+    <string name="payments_error_message"> No pudimos obtener tus m&#xE9;todos de pago</string>
+    <string name="payments_error_update_message">No pudimos actualizar el m&#xE9;todo de pago actual</string>
+    <string name="payments_error_delete_message">No podemos eliminar tu m&#xE9;todo de pago</string>
+    <string name="payments_credit_card_number">N&#xFA;mero de tarjeta</string>
+    <string name="payments_credit_card_number_error">N&#xFA;mero de tarjeta no v&#xE1;lido</string>
+    <string name="payments_credit_card_expiration">Caducidad</string>
+    <string name="payments_credit_card_expiration_error">Fecha no v&#xE1;lida</string>
+    <string name="payments_credit_card_cvv">CVV</string>
+    <string name="payments_credit_card_cvv_error">CVV no v&#xE1;lido</string>
+    <string name="payment_credit_card_title">A&#xF1;adir tarjeta</string>
+    <string name="payments_remove_payment_method_title">Eliminar m&#xE9;todo de pago</string>
+    <string name="payments_remove_payment_method_message">Vas a eliminar el m&#xE9;todo de pago %1$s. &#xBF;Est&#xE1;s seguro?</string>
+    <string name="payments_remove_payment_method_confirm">Eliminar</string>
+    <string name="payments_remove_payment_method_cancel">Cancelar</string>
+    <string name="payments_empty_title">Nada por aqu&#xED;.</string>
+    <string name="payments_empty_subtitle">Para poder realizar tus viajes necesitas un m&#xE9;todo de pago.</string>
+    <string name="payments_list_title">M&#xE9;todos de pago</string>
+    <string name="payments_list_cash_title">Efectivo</string>
+    <string name="payments_list_cash_subtitle">Pago en efectivo</string>
+    <string name="payments_list_pos_title">Dat&#xE1;fono</string>
+    <string name="payments_list_pos_subtitle">Paga a bordo con tarjeta</string>
+    <string name="payments_list_subtitle">Elige c&#xF3;mo quieres pagar</string>
+    <string name="payments_item_cardnumber_format">.... .... .... %1$s</string>
+    <string name="payments_add_card_error_title">Tu tarjeta no fue autorizada</string>
+    <string name="payments_add_card_error_subtitle">Aseg&#xFA;rate de que los datos de la tarjeta son correctos e int&#xE9;ntalo de nuevo</string>
+    <string name="payments_add_card_error_button">Aceptar</string>
+    <string name="payments_add_card_cvv_title">&#xBF;Qu&#xE9; es el CVV?</string>
+    <string name="payments_add_card_cvv_subtitle">Son los 3 &#xF3; 4 n&#xFA;meros en la parte posterior de su tarjeta</string>
+    <string name="payments_add_card_cvv_button">Entendido</string>
+    <string name="payments_add_card_loading_title">A&#xF1;adiendo tu tarjeta</string>
+    <string name="payments_add_card_loading_subtitle">Solo ser&#xE1;n unos segundos...</string>
+    <string name="payments_add_card_success_title">A&#xF1;adida con &#xE9;xito</string>
+    <string name="payments_add_method_title">&#xBF;C&#xF3;mo quieres pagar?</string>
+    <string name="payments_add_method_subtitle">A&#xF1;ade una nueva forma de pago</string>
+    <string name="payments_skip_action">Saltar</string>
+    <string name="payments_cancel_button">Cancelar</string>
+    <string name="payments_add_payment_method_error">&#xA1;Oops! Parece que algo fue mal. Por favor, int&#xE9;ntalo de nuevo.</string>
+    <string name="payments_loading">Cargando&#x2026;</string>
+    <string name="payments_add_payment_method_success">M&#xE9;todo de pago a&#xF1;adido con &#xE9;xito</string>
+    <string name="payments_delete_payment_method_success">M&#xE9;todo de pago eliminado con &#xE9;xito</string>
+    <string name="photo_verification_landing_title">Verifica tu identidad</string>
+    <string name="photo_verification_title">Verifica tu identidad</string>
+    <string name="photo_verification_loading_message">Ser&#xE1;n solo unos segundos</string>
+    <string name="photo_verification_invalid_error">No pudimos verificar tu documento. Puedes intentarlo de nuevo o esperar a que lo revisemos en las pr&#xF3;ximas 48 horas.</string>
+    <string name="photo_verification_manual_verification_needed_title">Verificaci&#xF3;n manual</string>
+    <string name="photo_verification_manual_verification_needed_title_ok">OK</string>
+    <string name="photo_verification_cancel_dialog_title">Espera un momento...</string>
+    <string name="photo_verification_cancel_dialog_message">Est&#xE1;s a punto de salir sin a&#xF1;adir un m&#xE9;todo de pago.</string>
+    <string name="photo_verification_cancel_dialog_cancel">Seguir aqu&#xED;</string>
+    <string name="photo_verification_cancel_dialog_ok">Salir</string>
+    <string name="photo_verification_national_id_message_text1">Fotograf&#xED;a la</string>
+    <string name="photo_verification_national_id_message_text2">parte frontal</string>
+    <string name="photo_verification_national_id_message_text3">de tu documento de identidad.</string>
+    <string name="photo_verification_national_id_retry_picture">Repetir foto</string>
+    <string name="photo_verification_national_id_use_picture">Usar foto</string>
+    <string name="photo_verification_error">Error de verificaci&#xF3;n</string>
+
+    <string name="payments_add_status_title">A&#xF1;adiendo forma de pago</string>
+    <string name="payments_add_status_subtitle">Solo ser&#xE1;n unos segundos...</string>
+    <string name="payments_holder_full_name">Nombre del titular</string>
+    <string name="payments_holder_full_name_error">El nombre no puede estar vac&#xED;o</string>
+    <string name="payments_credit_card_expiration_placeholder">MM/AA</string>
+
+    <string name="payments_credit_card_cvv_placeholder">123</string>
+    <string name="payments_selector_title">&#xBF;C&#xF3;mo quieres pagar?</string>
+    <string name="payments_selector_add_payment_method">A&#xF1;adir m&#xE9;todo de pago</string>
+
+
+    <string name="license_verification_landing_title">Valida tu permiso de conducir</string>
+    <string name="license_verification_landing_subtitle">Saca una foto a tu permiso y en tan solo 3 minutos podr&#xE1;s empezar a conducir</string>
+    <string name="license_verification_landing_accept_button">Validar permiso</string>
+    <string name="license_verification_landing_cancel_button">Dejarlo para m&#xE1;s tarde</string>
+
+    <string name="license_verification_front_title">PARTE FRONTAL</string>
+    <string name="license_verification_description">Coloca tu permiso en el recuadro y espera a que se escanee autom&#xE1;ticamente.</string>
+
+    <string name="license_verification_countries_highlighted">Ubicaci&#xF3;n actual</string>
+    <string name="license_verification_countries_regular">Todos los pa&#xED;ses</string>
+    <string name="license_verification_countries_help">&#xBF;No encuentras tu pa&#xED;s?</string>
+    <string name="license_verification_countries_search_empty">No hay resultados para \"%1$s\"</string>
+    <string name="license_verification_countries_search_hint">Buscar un pa&#xED;s</string>
+
+    <string name="license_verification_countries_popup_title">&#xBF;Por qu&#xE9; no encuentro mi pa&#xED;s?</string>
+    <string name="license_verification_countries_popup_description">Por motivos gubernamentales s&#xF3;lo aceptamos permisos expedidos en ciertos pa&#xED;ses. Lamentablemente no puedes conducir una Movo si tu pa&#xED;s no est&#xE1; en la lista.</string>
+    <string name="license_verification_countries_popup_button">Entendido</string>
+
+    <string name="license_verification_success_title">Permiso verificado con &#xE9;xito</string>
+    <string name="license_verification_success_description">&#xA1;Ya puedes empezar a conducir!</string>
+    <string name="license_verification_success_button">Empezar a conducir</string>
+
+    <string name="license_verification_timeout_title">No pudimos verificar tu permiso</string>
+    <string name="license_verification_timeout_description">No verificado</string>
+    <string name="license_verification_timeout_button">Intentar de nuevo</string>
+    <string name="license_verification_timeout_reason1">Has seleccionado correctamente el pa&#xED;s al que pertenece tu permiso</string>
+    <string name="license_verification_timeout_reason2">La fotograf&#xED;a que aparece en tu permiso se ve con suficiente claridad</string>
+    <string name="license_verification_timeout_reason3">Tu documento es un permiso de conducir vigente</string>
+
+    <string name="license_verification_errors_title">Comprueba que&#x2026;</string>
+
+    <string name="vehicle_selection_asap">Ahora</string>
+    <string name="vehicle_selection_reservation">Reserva</string>
+    <string name="vehicle_selection_title">&#xBF;Qu&#xE9; tipo de servicio quieres?</string>
+    <string name="vehicle_selection_order_asap">Pedir ahora</string>
+    <string name="vehicle_selection_order_reservation">Reservar</string>
+    <string name="vehicle_selection_ready">Seleccionar</string>
+    <string name="vehicle_selection_empty_eta">N/D</string>
+    <string name="vehicle_selection_only_reservation">"S&#xF3;lo reservas"</string>
+    <string name="vehicle_selection_reservation_button">Reservar</string>
+    <string name="vehicle_selection_message_button">Mensaje para el conductor</string>
+    <string name="vehicle_selection_charge_code_title">Centro de coste</string>
+    <string name="vehicle_selection_charge_code_code_field">A&#xF1;ade un centro de coste</string>
+    <string name="vehicle_selection_reservation_confirm_cancel_dialog_title">Un segundo...</string>
+    <string name="vehicle_selection_reservation_confirm_cancel_dialog_description">Est&#xE1;s a punto de cancelar esta reserva. &#xBF;Est&#xE1;s seguro?</string>
+    <string name="vehicle_selection_reservation_confirm_cancel_dialog_cancel_button">Seguir aqu&#xED;</string>
+    <string name="vehicle_selection_reservation_confirm_cancel_dialog_accept">Salir</string>
+    <string name="vehicle_selection_reservation_date_picker_bottom_sheet_title">Elige fecha y hora</string>
+    <string name="vehicle_selection_reservation_date_picker_confirm_button">Continuar</string>
+    <string name="vehicle_selection_reservation_date_picker_day_format">EEE dd MMM</string>
+    <string name="vehicle_selection_reservation_date_picker_today">Hoy</string>
+    <string name="vehicle_selection_reservation_date_detail_today">\'Hoy\' \'a las\' HH:mm</string>
+    <string name="vehicle_selection_reservation_date_detail_tomorrow">\'Ma&#xF1;ana\' \'a las\' HH:mm</string>
+    <string name="vehicle_selection_reservation_date_detail_today_any_date">EEE d \'a las\' HH:mm </string>
+    <string name="vehicle_selection_estimation_error">&#xA1;Oops! Hubo un error al cargar nuestros servicios.</string>
+    <string name="vehicle_selection_try_again">Pulsa aqu&#xED; para volverlo a intentar</string>
+    <string name="vehicle_selection_estimation_no_vehicles">Lo sentimos. En este momento no puedes solicitar un Cabify con esta cuenta.</string>
+    <string name="vehicle_selection_estimation_no_reservation_available">Cabify no disponible. Lo sentimos pero no podemos ofrecerte ning&#xFA;n veh&#xED;culo para esa hora.</string>
+    <string name="vehicle_selection_estimation_no_vehicles_try_again">Pulsa aqu&#xED; para volverlo a intentar</string>
+    <string name="vehicle_selection_estimation_no_asap">Solo reservas. En esta zona no atendemos peticiones inmediatas. Necesitar&#xE1;s hacer una reserva.</string>
+    <string name="deeplink_alert_no_location_title">Oops</string>
+    <string name="deeplink_alert_no_location_description">No conseguimos obtener la localizaci&#xF3;n de tu dispositivo para crear este viaje</string>
+    <string name="vehicle_selector_total_price_title">Precio total</string>
+    <string name="vehicle_selector_type_selected_eta">te recoger&#xE1; en %1$s</string>
+    <string name="vehicle_selector_type_unselected_eta">en %1$s</string>
+    <string name="vehicle_selector_special_vehicle_button_text">Continuar</string>
+    <string name="vehicle_selection_reservation_date_hour">\'te recoger&#xE1; a las \'HH:mm</string>
+
+    <string name="movo_booked_title">Tu reserva</string>
+    <string name="movo_booked_time">Tiempo de reserva</string>
+    <string name="movo_booked_start">Iniciar viaje</string>
+    <string name="movo_booked_cancel">Cancelar reserva</string>
+    <string name="movo_booked_approach_to_start">Ac&#xE9;rcate para iniciar</string>
+    <string name="movo_reservation_time_hours">%1$s:%2$s horas</string>
+    <string name="movo_reservation_time_minutes">%1$s:%2$s min</string>
+    <string name="movo_cancel_title">Un momento...</string>
+    <string name="movo_cancel_description">&#xBF;Est&#xE1;s seguro que quieres cancelar tu reserva?</string>
+    <string name="movo_cancel_yes">S&#xED;, cancelar</string>
+    <string name="movo_cancel_no">No, volver</string>
+    <string name="movo_booked_battery">%1$d \%% de bater&#xED;a</string>
+    <string name="movo_booked_expired_dialog_title">Tu reserva ha caducado</string>
+    <string name="movo_booked_expired_dialog_description">Selecciona otro veh&#xED;culo del mapa para hacer una nueva reserva</string>
+
+  <string name="driver_cancel_title">Viaje cancelado</string>
+  <string name="driver_cancel_return_home">Volver al inicio</string>
+
+    <string name="app_name">Cabify</string>
+  <string name="accept">Aceptar</string>
+  <string name="cancel">Cancelar</string>
+    <string name="sending">Enviando&#x2026;</string>
+  <string name="general_retry">Reintentar</string>
+  <string name="general_ok">OK</string>
+  <string name="general_accept">Aceptar</string>
+  <string name="general_delete">Eliminar</string>
+  <string name="exit_warning">Pulsa atr&#xE1;s otra vez para salir</string>
+  <string name="profile_gallery_source">Elegir de la galer&#xED;a</string>
+  <string name="profile_camera_source">Hacer foto</string>
+  <string name="google_play_services_mandatory_title">Actualiza los Servicios de Google Play</string>
+  <string name="google_play_services_mandatory_message">Para usar Cabify es necesario actualizar los Servicios de Google Play para usar Cabify.</string>
+  <plurals name="meters">
+    <item quantity="one">%1$s metro</item>
+    <item quantity="other">%1$s metros</item>
+  </plurals>
+  <plurals name="kilometers">
+    <item quantity="one">%1$s km</item>
+    <item quantity="other">%1$s kms</item>
+  </plurals>
+
+    <string name="hire_title_short_search">Solicitando...</string>
+    <string name="hire_title_long_search">Buscando...</string>
+    <string name="hire_title_with_driver">Conectando...</string>
+
+    <string name="hire_subtitle">Conectando con el mejor conductor para tu ubicaci&#xF3;n.</string>
+    <string name="hire_subtitle_long_search_1">Est&#xE1;s avanzando en la fila de espera.</string>
+    <string name="hire_subtitle_long_search_2">Te enviaremos una notificaci&#xF3;n cuando encontremos a tu conductor.</string>
+    <string name="hire_subtitle_long_search_3">La cancelaci&#xF3;n en este momento es gratuita.</string>
+
+    <string name="hire_cancel_dialog_title">&#xBF;Seguro que quieres cancelar?</string>
+    <string name="hire_cancel_dialog_description">La cancelaci&#xF3;n en este momento es gratuita, pero si cancelas, perderas tu posici&#xF3;n en la cola de espera.</string>
+    <string name="hire_cancel_dialog_accept_button">Seguir buscando</string>
+    <string name="hire_cancel_dialog_cancel_button">Cancelar viaje</string>
+
+    <string name="hire_progress_state">Tiempo m&#xE1;ximo de espera: %1$s min</string>
+    <string name="hire_waiting_driver_response">Esperando a que %1$s acepte el viaje.</string>
+
+  <string name="news_title">Noticias</string>
+
+  <string name="upcoming_journey_to">Viaje a %s</string>
+  <string name="upcoming_journey_from">Viaje desde %s</string>
+  <string name="upcoming_empty_title">No tienes viajes planeados.</string>
+  <string name="upcoming_empty_subtitle">Aqu&#xED; podr&#xE1;s encontrar todas tus reservas y viajes activos.</string>
+  <string name="upcoming_header_active_single">Activos</string>
+  <string name="upcoming_header_active_multiple">Activos (%s)</string>
+  <string name="upcoming_header_reserve_single">Reservas</string>
+  <string name="upcoming_header_reserve_multiple">Reservas (%s)</string>
+
+    <string name="easy_onboarding_go_button">Vamos</string>
+    <string name="easy_onboarding_skip_button">&#xBF;No eres t&#xFA;?</string>
+    <string name="easy_onboarding_title">&#xA1;Bien hecho!</string>
+    <string name="easy_onboarding_message">Hemos creado tu cuenta a partir de tus datos de Easy.</string>
+    <string name="easy_onboarding_list_title">Informaci&#xF3;n sincronizada:</string>
+    <string name="easy_onboarding_list_first_item">Datos personales</string>
+    <string name="easy_onboarding_list_second_item">M&#xE9;todo de pago</string>
+    <string name="easy_onboarding_list_third_item">Localizaciones favoritas</string>
+
+  <string name="preferences_title">Mis preferencias</string>
+  <string name="preferences_subtitle">Viaja a tu manera</string>
+  <string name="preference_music_title">M&#xFA;sica</string>
+    <string name="preference_ac_title">Aire acondicionado</string>
+    <string name="preference_call_title">Llamar</string>
+    <string name="preference_door_title">Abrir la puerta</string>
+
+  <string name="journey_in_progress_title">Ya tienes un viaje activo</string>
+  <string name="journey_in_progress_message">&#xBF;Est&#xE1;s seguro de que quieres solicitar un nuevo viaje?</string>
+  <string name="journey_in_progress_continue_button">Continuar</string>
+  <string name="journey_in_progress_cancel_button">Cancelar</string>
+
+    <string name="motoselection_title">Empieza tu viaje</string>
+    <string name="motoselection_description">Selecciona un veh&#xED;culo del mapa o ac&#xE9;rcate y escanea el c&#xF3;digo QR</string>
+    <string name="motoselection_scan_button">Escanear c&#xF3;digo</string>
+    <string name="motoselection_reserve_button">Reservar</string>
+
+    <string name="rider_cancel_try">Reintentar</string>
+  <string name="rider_cancel_reasons_dialog_title">Viaje cancelado</string>
+  <string name="rider_cancel_reasons_dialog_loading">Cargando...</string>
+  <string name="rider_cancel_reasons_dialog_subtitle">&#xBF;Cu&#xE1;l fue el motivo de la cancelaci&#xF3;n del viaje?</string>
+  <string name="rider_cancel_reasons_dialog_cancel_footer">Continuar</string>
+
+  <string name="trusted_contact_empty_title">Persona de confianza</string>
+  <string name="trusted_contact_empty_subtitle">Mant&#xE9;n a tus amigos o familiares al tanto</string>
+  <string name="trusted_contact_empty_description">Elige un amigo o familiar con quien te gustar&#xED;a compartir la informaci&#xF3;n de tu viaje. Le enviaremos mensajes para mantenerle al tanto.</string>
+  <string name="trusted_contact_form_title">Contacto</string>
+  <string name="trusted_contact_name">Persona de confianza</string>
+  <string name="trusted_contact_email">Email</string>
+  <string name="trusted_contact_delete">Eliminar contacto</string>
+  <string name="trusted_contact_delete_confirm_title">&#xBF;Est&#xE1;s seguro?</string>
+  <string name="trusted_contact_delete_confirm_body">Est&#xE1;s a punto de borrar a tu persona de confianza.</string>
+  <string name="trusted_contact_error">&#xA1;Ups! Algo fue mal. Por favor, vuelve a intentarlo.</string>
+  <string name="trusted_contact_successfully_added">&#xA1;Hecho! Avisaremos a tu persona de confianza de tus viajes.</string>
+  <string name="trusted_contact_successfully_deleted">&#xA1;Hecho! Contacto eliminado correctamente.</string>
+
+    <string name="you_will_pay">Pagar&#xE1;s con</string>
+    <string name="you_will_be_pickup_in">te recoger&#xE1; en %1$s</string>
+    <string name="you_will_be_pickup_reservation">\'te recoger&#xE1; a las \'HH:mm</string>
+    <string name="you_will_be_dropedoff_in">llegar&#xE1;s a las %1$s</string>
+    <string name="add_payment_method">A&#xF1;adir pago</string>
+    <string name="we_need_you_to_add_a_payment_method">Para poder viajar necesitamos que a&#xF1;adas una forma de pago.</string>
+    <string name="surge_info_title">&#xBF;Qu&#xE9; es alta demanda?</string>
+    <string name="surge_info_description">Es un costo adicional que se aplica puntualmente cuando muchos usuarios est&#xE1;n pidiendo un veh&#xED;culo al mismo tiempo. As&#xED; disminuimos el tiempo de espera cuando pidas un viaje. </string>
+    <string name="surge_info_understood">Entendido</string>
+    <string name="carbon_neutral_description">Todo el CO2 de este viaje ser&#xE1; compensado por Cabify mediante la protecci&#xF3;n de &#xE1;rboles en la Amazon&#xED;a.</string>
+
+    <string name="vehicle_selection_national_id_title">Documento de identidad</string>
+    <string name="vehicle_selection_national_id_field">A&#xF1;ade tu documento de identidad</string>
+    <string name="vehicle_selection_national_id_required_message">Por motivos legales, necesitamos saber el n&#xFA;mero de tu documento nacional de identidad o pasaporte.</string>
+
+    <string name="qrscan_title">Escanea el c&#xF3;digo QR</string>
+    <string name="qrscan_subtitle">Lo encontrar&#xE1;s en el lateral del veh&#xED;culo</string>
+    <string name="qrscan_button">Introducir n&#xFA;mero Movo</string>
+    <string name="manual_code_title">Introduce el n&#xFA;mero Movo</string>
+    <string name="manual_code_input_label">N&#xFA;mero Movo</string>
+    <string name="manual_code_input_subtitle">Lo encontrar&#xE1;s en el lateral del veh&#xED;culo</string>
+    <string name="manual_code_button">Confirmar</string>
+
+  <string name="my_account_hello_user_message">&#xA1;Hola, %1$s!</string>
+  <string name="my_account_description_message">Listos para viajar. &#xBF;Y t&#xFA;?</string>
+  <string name="my_account_section_item_title_profile">Mis datos</string>
+  <string name="my_account_section_item_subtitle_profile">Edita email, contrase&#xF1;a...</string>
+  <string name="my_account_section_item_title_my_places">Mis sitios</string>
+  <string name="my_account_section_item_subtitle_my_places">Guarda tus lugares favoritos</string>
+  <string name="my_account_section_item_title_preferences">Mis preferencias</string>
+  <string name="my_account_section_item_subtitle_preferences">Haz que tu viaje sea especial</string>
+  <string name="my_account_section_item_title_trusted_contact">Persona de confianza</string>
+  <string name="my_account_section_item_subtitle_trusted_contact">Comparte todos tus viajes</string>
+</resources>

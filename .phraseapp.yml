@@ -3,11 +3,13 @@ phraseapp:
   project_id: b5bddf0e6f96f00570510eb5d494d49c
   push:
     sources:
-    - file: ./strings-<locale_code>.xml
+    - file: ./final-strings-<locale_code>.xml
       params:
         file_format: xml
   pull:
     targets:
-    - file: ./new/<locale_code>.lproj/Localizable.strings
+    - file: ../product_mobile_ios_rider/CabifyRider/<locale_code>.lproj/Localizable.strings
       params:
         file_format: strings
+        format_options:
+          convert_placeholder: true
