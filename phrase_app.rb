@@ -21,7 +21,7 @@ class PhraseApp
 		get_xml(@@android_resouces_path, @@languages)
 
 		#### Get key => translation hash for android/ios translations
-		ios_old_translations = get_hash_from_localizable(@@ios_localizables_path, "es", true)
+		ios_old_translations = get_hash_from_localizable(@@ios_localizables_path, "es")
 		android_translations = get_hash_from_xml("./initial-strings-es.xml")
 		File.write("./ios_translations.json", JSON.pretty_generate(ios_old_translations))
 
@@ -33,7 +33,9 @@ class PhraseApp
 		add_missing_translations(@@ios_localizables_path, missing_translations_keys, @@languages)
 		updated_android_translations = get_hash_from_xml("./strings-es.xml")
 
-		updated_compared_keys = get_compared_keys(ios_old_translations, updated_android_translations)
+		ios_translations_with_android_placeholders = replace_placeholder_from_hash(ios_old_translations)
+
+		updated_compared_keys = get_compared_keys(ios_translations_with_android_placeholders, updated_android_translations)
 		File.write("./compared_keys.json", JSON.pretty_generate(updated_compared_keys))
 
 		#### SwiftGen transformation
@@ -95,13 +97,13 @@ class PhraseApp
 		strings_nodes.each { |node|
 			key = node.attributes['name']
 			value = node.text
-			hash[key.value] = remove_placeholders(node.text) unless key.nil? || value.nil?
+			hash[key.value] = node.text unless key.nil? || value.nil?
 		}
 
 		return hash
 	end
 
-	def self.get_hash_from_localizable(path, language_code, removing_placeholders)
+	def self.get_hash_from_localizable(path, language_code)
 		file_path = "#{path}/#{language_code}.lproj/Localizable.strings"
 		hash = Hash.new
 		text = File.foreach(file_path) { |line|
@@ -109,7 +111,7 @@ class PhraseApp
 			match = line.match("\\\"(.*?)\\\" += +\\\"(.*?)\\\";\\n")
 			unless match.nil?
 				key, translation = match.captures
-				hash[key] = removing_placeholders ? remove_placeholders(translation) : translation
+				hash[key] = translation
 			end
 		}
 		return hash
@@ -133,27 +135,22 @@ class PhraseApp
 		return missing_translations
 	end
 
-	def self.remove_placeholders(text)
-		return text
-		# return text
-		# .split(' ')
-		# .map { |word|
-		# 	if word.include? "%"
-		# 		''
-		# 	else 
-		# 		word
-		# 	end
-		# }
-		# .join(' ')
-	end
-
-	def self.get_snake_case_key(key)
-		return key.gsub(/::/, '/')
+	def self.get_snake_case_key(key, downcase)
+		snake_case_key = key.gsub(/::/, '/')
 	    .gsub(/([A-Z]+)([A-Z][a-z])/,'\1_\2')
 	    .gsub(/([a-z\d])([A-Z])/,'\1_\2')
 	    .tr("-", "_")
-	    .downcase
 	    .gsub(' ', '_')
+
+	    downcase ? snake_case_key.downcase : snake_case_key
+	end
+
+	def self.replace_placeholder_from_hash(hash)
+		replaced_hash = Hash.new
+		hash.each do |key, translation|
+			replaced_hash[key] = replace_placeholders(translation)
+		end
+		return replaced_hash
 	end
 
 	def self.replace_placeholders(translation)
@@ -168,11 +165,11 @@ class PhraseApp
 			xml_file_path = "./initial-strings-#{ios_language_code}.xml"
 			xml_file = File.read(xml_file_path)
 			xml = Nokogiri::XML(xml_file)
-			ios_translations = get_hash_from_localizable(ios_localizables_path, ios_language_code, false)
+			ios_translations = get_hash_from_localizable(ios_localizables_path, ios_language_code)
 			android_translations = get_hash_from_xml(xml_file_path)
 			missing_keys.each do |key|
 				translation = ios_translations[key]
-				valid_android_key = get_snake_case_key(key)
+				valid_android_key = get_snake_case_key(key, true)
 				valid_android_translation = replace_placeholders(translation)
 				already_exists = check_if_missing_key_already_exists(android_translations, valid_android_key)
 				final_key = already_exists ? valid_android_key + "_legacy" : valid_android_key
@@ -188,10 +185,14 @@ class PhraseApp
 		return android_translations.keys.include? missing_key
 	end
 
-	def self.get_swift_gen_key(key)
-		return get_snake_case_key(key)
+	def self.get_swiftgen_key(key, downcase)
+		get_snake_case_key(key, downcase)
 		.split('_').map.with_index { |word, index|
-			index == 0 ? word[0].downcase + word[1..-1] : word.capitalize
+			if word.upcase == word && downcase == false
+				index == 0 ? word.downcase : word
+			else
+				index == 0 ? word[0].downcase + word[1..-1] : word.capitalize
+			end
 		}
 		.join
 	end
@@ -199,7 +200,7 @@ class PhraseApp
 	def self.get_swift_gen_compared_keys(updated_compared_keys)
 		result = Hash.new
 		updated_compared_keys.each do |old_key, new_key|
-			result[get_swift_gen_key(old_key)] = get_swift_gen_key(new_key)
+			result[get_swiftgen_key(old_key, false)] = get_swiftgen_key(new_key, true)
 		end
 		return result
 	end
