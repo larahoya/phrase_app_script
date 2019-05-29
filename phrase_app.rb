@@ -26,7 +26,6 @@ class PhraseApp
 		File.write("./ios_translations.json", JSON.pretty_generate(ios_old_translations))
 
 		#### Get old_key => new_key hash for Localizables
-		compared_keys = get_compared_keys(ios_old_translations, android_translations)
 		missing_translations_keys = get_missing_translations_keys(ios_old_translations, android_translations)
 		File.write("./missing_keys.json", JSON.pretty_generate(missing_translations_keys))
 
@@ -45,6 +44,10 @@ class PhraseApp
 		system("phraseapp push")
 		#### Pull iOS Localizables.strings
 		system("phraseapp pull")
+	end
+
+	def self.swiftgenBuildPhase
+		system('"../product_mobile_ios_rider/swiftgen-5.3.0/bin/swiftgen" strings "../product_mobile_ios_rider/CabifyRider/es.lproj/Localizable.strings" -t structured-swift3 --output "../product_mobile_ios_rider/CabifyRider/Constants/Strings.swift"')
 	end
 
 	def self.replace_strings_keys
@@ -131,11 +134,17 @@ class PhraseApp
 	end
 
 	def self.remove_placeholders(text)
-		return ['/\%\d\$s/', '/\%\d\$d/', '/\%s/', '/\%d/', '/\%@/']
-		.reduce(text) { |result, regex|
-			result.gsub(regex, '')
-		}
-		.gsub(/[áéíóú]/, '')
+		return text
+		# return text
+		# .split(' ')
+		# .map { |word|
+		# 	if word.include? "%"
+		# 		''
+		# 	else 
+		# 		word
+		# 	end
+		# }
+		# .join(' ')
 	end
 
 	def self.get_snake_case_key(key)
@@ -182,11 +191,7 @@ class PhraseApp
 	def self.get_swift_gen_key(key)
 		return get_snake_case_key(key)
 		.split('_').map.with_index { |word, index|
-			if ["ac"].include? word
-				word.upcase
-			else
-				index == 0 ? word[0].downcase + word[1..-1] : word.capitalize
-			end
+			index == 0 ? word[0].downcase + word[1..-1] : word.capitalize
 		}
 		.join
 	end
@@ -228,4 +233,5 @@ end
 #phraseapp init --> .phraseapp.yml
 
 PhraseApp.replace_localizable_files
-# PhraseApp.replace_strings_keys
+PhraseApp.swiftgenBuildPhase
+PhraseApp.replace_strings_keys

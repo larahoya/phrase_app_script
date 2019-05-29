@@ -1,54 +1,54 @@
 <?xml version="1.0"?>
 <resources>
-  <string name="my_places_screen_title">Mis sitios</string>
-  <string name="my_places_description_message">A&#xF1;ade destinos y pide m&#xE1;s r&#xE1;pido</string>
-  <string name="my_places_empty_state_title">A&#xFA;n no tienes favoritos.</string>
-  <string name="my_places_empty_state_description">Guarda aqu&#xED; los lugares que m&#xE1;s frecuentes como tu casa, tu trabajo...</string>
-  <string name="my_places_add_place">A&#xF1;adir favorito</string>
-  <string name="my_places_add_home">A&#xF1;adir casa</string>
-  <string name="my_places_add_work">A&#xF1;adir trabajo</string>
-  <string name="my_places_home">Casa</string>
-  <string name="my_places_work">Trabajo</string>
-  <string name="my_places_favorite">Favorito</string>
-  <string name="my_places_get_places_error">No hemos podido cargar tus favoritos</string>
-  <string name="my_places_get_places_error_retry">Reintentar</string>
-  <string name="my_places_title">A&#xF1;adir favorito</string>
-  <string name="my_places_suggestions_search_box_hint_work">&#xBF;D&#xF3;nde trabajas?</string>
-  <string name="my_places_suggestions_search_box_hint_home">&#xBF;D&#xF3;nde vives?</string>
-  <string name="my_places_suggestions_search_box_hint_favorite">Buscar direcci&#xF3;n</string>
-  <string name="my_places_add_field_name">Nombre del sitio</string>
+    <string name="my_places_screen_title">Mis sitios</string>
+    <string name="my_places_description_message">A&#xF1;ade destinos y pide m&#xE1;s r&#xE1;pido</string>
+    <string name="my_places_empty_state_title">A&#xFA;n no tienes favoritos.</string>
+    <string name="my_places_empty_state_description">Guarda aqu&#xED; los lugares que m&#xE1;s frecuentes como tu casa, tu trabajo...</string>
+    <string name="my_places_add_place">A&#xF1;adir favorito</string>
+    <string name="my_places_add_home">A&#xF1;adir casa</string>
+    <string name="my_places_add_work">A&#xF1;adir trabajo</string>
+    <string name="my_places_home">Casa</string>
+    <string name="my_places_work">Trabajo</string>
+    <string name="my_places_favorite">Favorito</string>
+    <string name="my_places_get_places_error">No hemos podido cargar tus favoritos</string>
+    <string name="my_places_get_places_error_retry">Reintentar</string>
+    <string name="my_places_title">A&#xF1;adir favorito</string>
+    <string name="my_places_suggestions_search_box_hint_work">&#xBF;D&#xF3;nde trabajas?</string>
+    <string name="my_places_suggestions_search_box_hint_home">&#xBF;D&#xF3;nde vives?</string>
+    <string name="my_places_suggestions_search_box_hint_favorite">Buscar direcci&#xF3;n</string>
+    <string name="my_places_add_field_name">Nombre del sitio (Privado)</string>
     <string name="my_places_add_private">Mostrar el nombre al conductor</string>
     <string name="my_places_add_delete">Eliminar</string>
     <string name="my_places_add_location_disclaimer">Ubicaci&#xF3;n privada; el conductor nunca sabr&#xE1; que este lugar es tu %1$s.</string>
-  <string name="my_places_delete_title">&#xBF;Est&#xE1;s seguro?</string>
-  <string name="my_places_delete_description">Est&#xE1;s a punto de eliminar uno de tus sitios favoritos</string>
-  <string name="my_places_delete_confirm_button">Eliminar</string>
-  <string name="my_places_delete_cancel_button">Cancelar</string>
-  <string name="my_places_leave_without_saving_title">Un momento...</string>
-  <string name="my_places_leave_without_saving_description">Est&#xE1;s a punto de salir sin guardar los cambios.</string>
-  <string name="my_places_leave_confirm_button">Salir</string>
-  <string name="my_places_leave_cancel_button">Seguir aqu&#xED;</string>
-  <string name="my_places_instructions_address">Direcci&#xF3;n</string>
-  <string name="my_places_instructions_number">N&#xFA;m.</string>
-  <string name="my_places_instructions_instructions">Instrucciones al conductor</string>
-  <string name="my_places_get_location_from_suggestion_error">No pudimos obtener tu ubicaci&#xF3;n sugerida</string>
-  <string name="my_places_get_favorite_info_error">No pudimos obtener tu favorito </string>
-  <string name="my_places_delete_favorite_error">No pudimos eliminar favorito, reintenta </string>
-  <string name="my_places_create_favorite_error">No hemos podido crear favorito, reintenta </string>
-  <string name="my_places_update_favorite_error">No pudimos actualizar favorito, reintenta</string>
-  <string name="my_places_no_location_found">Ning&#xFA;n sitio encontrado.</string>
-  <string name="my_places_updated_favorite_message">&#xA1;Actualizado con &#xE9;xito!</string>
-  <string name="my_places_created_favorite_message">&#xA1;Creado con &#xE9;xito!</string>
-  <string name="my_places_removed_favorite_message">&#xA1;Eliminado con &#xE9;xito!</string>
-  <string name="my_places_map_indications">Establecer ubicaci&#xF3;n</string>
-  <string name="my_places_error_getting_address">Error al obtener la ubicaci&#xF3;n</string>
+    <string name="my_places_delete_title">&#xBF;Est&#xE1;s seguro?</string>
+    <string name="my_places_delete_description">Est&#xE1;s a punto de eliminar uno de tus sitios favoritos</string>
+    <string name="my_places_delete_confirm_button">Eliminar</string>
+    <string name="my_places_delete_cancel_button">Cancelar</string>
+    <string name="my_places_leave_without_saving_title">Un momento...</string>
+    <string name="my_places_leave_without_saving_description">Est&#xE1;s a punto de salir sin guardar los cambios.</string>
+    <string name="my_places_leave_confirm_button">Salir</string>
+    <string name="my_places_leave_cancel_button">Seguir aqu&#xED;</string>
+    <string name="my_places_instructions_address">Direcci&#xF3;n</string>
+    <string name="my_places_instructions_number">N&#xFA;m.</string>
+    <string name="my_places_instructions_instructions">Instrucciones al conductor</string>
+    <string name="my_places_get_location_from_suggestion_error">No pudimos obtener tu ubicaci&#xF3;n sugerida</string>
+    <string name="my_places_get_favorite_info_error">No pudimos obtener tu favorito </string>
+    <string name="my_places_delete_favorite_error">No pudimos eliminar favorito, reintenta </string>
+    <string name="my_places_create_favorite_error">No hemos podido crear favorito, reintenta </string>
+    <string name="my_places_update_favorite_error">No pudimos actualizar favorito, reintenta</string>
+    <string name="my_places_no_location_found">Ning&#xFA;n sitio encontrado.</string>
+    <string name="my_places_updated_favorite_message">&#xA1;Actualizado con &#xE9;xito!</string>
+    <string name="my_places_created_favorite_message">&#xA1;Creado con &#xE9;xito!</string>
+    <string name="my_places_removed_favorite_message">&#xA1;Eliminado con &#xE9;xito!</string>
+    <string name="my_places_map_indications">Establecer ubicaci&#xF3;n</string>
+    <string name="my_places_error_getting_address">Error al obtener la ubicaci&#xF3;n</string>
     <string name="my_places_address_parametrized">%1$s %2$s, %3$s </string>
-  <string name="my_places_point_on_map_address_home">Casa, %1$s </string>
-  <string name="my_places_point_on_map_address_work">Trabajo, %1$s </string>
-  <string name="my_places_point_on_map_address">%1$s </string>
-  <string name="my_places_name_bottom_sheet_title">A&#xF1;adir favorito</string>
-  <string name="my_places_name_bottom_sheet_input_label">Nombre del sitio</string>
-  <string name="my_places_name_bottom_sheet_input_hint">Gimnasio, centro comercial...</string>
+    <string name="my_places_point_on_map_address_home">Casa, %1$s </string>
+    <string name="my_places_point_on_map_address_work">Trabajo, %1$s </string>
+    <string name="my_places_point_on_map_address">%1$s </string>
+    <string name="my_places_name_bottom_sheet_title">A&#xF1;adir favorito</string>
+    <string name="my_places_name_bottom_sheet_input_label">Nombre del sitio</string>
+    <string name="my_places_name_bottom_sheet_input_hint">Gimnasio, centro comercial...</string>
 
   <string name="arrived_title">%1$s est&#xE1; esper&#xE1;ndote</string>
   <string name="arrived_waiting_time_hours">%1$s:%2$s horas</string>
@@ -102,8 +102,9 @@
     <string name="invitations_home_description_no_code">&#xA1;A qu&#xE9; esperas! Invita a tus amigos a descubrir la mejor forma de moverse por la ciudad...</string>
     <string name="invitations_home_button">Invitar a amigos</string>
     <string name="invitations_home_my_invitations">Mis invitaciones</string>
-    <string name="invitations_home_title">Viaja gratis</string>
+    <string name="invitations_home_title">Invitar amigos</string>
     <string name="invitations_home_subtitle">Invita a tus amigos y viaja por menos</string>
+    <string name="invitations_loading">Cargando&#x2026;</string>
     <string name="freerides_myinvites_existing_and_limit">%1$d/%2$d</string>
 
     <string name="view_vouchers_add_code">A&#xF1;adir c&#xF3;digo</string>
@@ -324,7 +325,7 @@
     <string name="menu_new_journey">Nuevo viaje</string>
     <string name="menu_journeys_paid">Viajes pagados por tu empresa</string>
     <string name="accounts">Cuentas</string>
-    <string name="menu_invitations">Viaja gratis</string>
+    <string name="menu_invitations">Invitar amigos</string>
     <string name="menu_admin">Admin</string>
 
     <string name="running_title">Viaje activo</string>
@@ -354,7 +355,7 @@
   <string name="permissions_permanently_denied_action_button">Ir a Ajustes</string>
 
     <string name="confirm_search_loading">Localizando&#x2026;</string>
-    <string name="confirm_title">&#xBF;Este es tu punto de origen?</string>
+    <string name="confirm_title">Confirma tu punto de recogida</string>
     <string name="confirm_pickup">Confirmar</string>
     <string name="confirm_pickup_suggestions_title">Confirmar punto de origen</string>
     <string name="confirm_pickup_suggestions_hint">&#xBF;D&#xF3;nde te buscamos?</string>
@@ -606,12 +607,14 @@
     <string name="payments_error_message"> No pudimos obtener tus m&#xE9;todos de pago</string>
     <string name="payments_error_update_message">No pudimos actualizar el m&#xE9;todo de pago actual</string>
     <string name="payments_error_delete_message">No podemos eliminar tu m&#xE9;todo de pago</string>
+
     <string name="payments_credit_card_number">N&#xFA;mero de tarjeta</string>
-    <string name="payments_credit_card_number_error">N&#xFA;mero de tarjeta no v&#xE1;lido</string>
+    <string name="payments_credit_card_number_error">El n&#xFA;mero de la tarjeta no es v&#xE1;lido</string>
     <string name="payments_credit_card_expiration">Caducidad</string>
-    <string name="payments_credit_card_expiration_error">Fecha no v&#xE1;lida</string>
+    <string name="payments_credit_card_expiration_error">La fecha es inv&#xE1;lida</string>
     <string name="payments_credit_card_cvv">CVV</string>
     <string name="payments_credit_card_cvv_error">CVV no v&#xE1;lido</string>
+
     <string name="payment_credit_card_title">A&#xF1;adir tarjeta</string>
     <string name="payments_remove_payment_method_title">Eliminar m&#xE9;todo de pago</string>
     <string name="payments_remove_payment_method_message">Vas a eliminar el m&#xE9;todo de pago %1$s. &#xBF;Est&#xE1;s seguro?</string>
@@ -737,7 +740,20 @@
     <string name="vehicle_selector_type_selected_eta">te recoger&#xE1; en %1$s</string>
     <string name="vehicle_selector_type_unselected_eta">en %1$s</string>
     <string name="vehicle_selector_special_vehicle_button_text">Continuar</string>
-    <string name="vehicle_selection_reservation_date_hour">\'te recoger&#xE1; a las \'HH:mm</string>
+    <string name="vehicle_selection_reservation_hour">\'te recoger&#xE1; a las \'HH:mm</string>
+    <string name="vehicle_selection_unknown_error_title">Error al cargar los veh&#xED;culos</string>
+    <string name="vehicle_selection_unknown_error_subtitle">Int&#xE9;ntalo de nuevo</string>
+    <string name="vehicle_selection_no_service_error_title">Servicio temporalmente no disponible</string>
+    <string name="vehicle_selection_no_service_error_subtitle">Pronto estaremos de vuelta :)</string>
+    <string name="vehicle_selection_order_diff_area">Pedir para otra zona</string>
+    <string name="vehicle_selection_no_vehicles_error">Lo sentimos, en este momento no puedes solicitar un Cabify con esta cuenta.</string>
+    <string name="vehicle_selection_no_reserve_error_title">%1$s no disponible</string>
+    <string name="vehicle_selection_no_reserve_error_subtitle">Solo puedes reservar este servicio con 6 horas de antelaci&#xF3;n.</string>
+    <string name="vehicle_selection_just_reserve_error_title">S&#xF3;lo reservas</string>
+    <string name="vehicle_selection_just_reserve_error_subtitle">En esta zona  no atendemos peticiones inmediatas. Necesitar&#xE1;s hacer una reserva.</string>
+    <string name="vehicle_selection_make_reserve">Hacer una reserva</string>
+    <string name="vehicle_selection_confirm_reserve">Confirmar reserva</string>
+
 
     <string name="movo_booked_title">Tu reserva</string>
     <string name="movo_booked_time">Tiempo de reserva</string>
@@ -862,6 +878,8 @@
     <string name="surge_info_description">Es un costo adicional que se aplica puntualmente cuando muchos usuarios est&#xE1;n pidiendo un veh&#xED;culo al mismo tiempo. As&#xED; disminuimos el tiempo de espera cuando pidas un viaje. </string>
     <string name="surge_info_understood">Entendido</string>
     <string name="carbon_neutral_description">Todo el CO2 de este viaje ser&#xE1; compensado por Cabify mediante la protecci&#xF3;n de &#xE1;rboles en la Amazon&#xED;a.</string>
+    <string name="vehicle_detail_price_error">Precio no disponible</string>
+    <string name="vehicle_detail_price_error_description">Algo no ha ido bien al calcular el precio de este viaje, pero puedes solicitarlo sin saber el precio.</string>
 
     <string name="vehicle_selection_national_id_title">Documento de identidad</string>
     <string name="vehicle_selection_national_id_field">A&#xF1;ade tu documento de identidad</string>
