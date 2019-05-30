@@ -42,6 +42,8 @@ class PhraseApp
 		swift_gen_compared_keys = get_swift_gen_compared_keys(updated_compared_keys)
 		File.write(@@compared_keys_file_path, JSON.pretty_generate(swift_gen_compared_keys))
 
+		replace_android_placeholders(@@languages)
+
 		#### Push XML to phraseapp
 		system("phraseapp push")
 		#### Pull iOS Localizables.strings
@@ -158,6 +160,23 @@ class PhraseApp
 		return translation.gsub("%@").with_index { |match, i|
 			"%#{i + 1}$s"
 		}
+	end
+
+	def self.replace_android_placeholders(languages)
+		languages.each do |ios_language_code, android_language_code|
+			xml = Nokogiri::XML("<resources></resources>")
+			android_translations = get_hash_from_xml("./strings-#{ios_language_code}.xml")
+			android_translations.each do |key, translation|
+				replaced_translation = replace_android_placeholder(translation)
+				node = "<string name=\"#{key}\">#{replaced_translation}</string>\n"
+				xml.at('resources').add_child(node)
+			end
+			save_xml(xml,"replaced-strings-#{ios_language_code}.xml")
+		end
+	end
+
+	def self.replace_android_placeholder(translation)
+		translation.gsub("%1s", "%1$s")
 	end
 
 	def self.add_missing_translations(ios_localizables_path, missing_keys, languages)
