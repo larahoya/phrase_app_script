@@ -4,6 +4,7 @@ require 'json'
 
 class PhraseApp
 
+	@@android_path = "../product_mobile_android_rider"
 	@@android_resouces_path = "../product_mobile_android_rider/rider/src/main/res/values"
 	## ios_language_code => android_language_code
 	@@languages = {
@@ -56,6 +57,25 @@ class PhraseApp
 		file = File.read @@compared_keys_file_path
 		compared_keys = JSON.parse(file)
 		replace_keys(compared_keys, @@ios_folder_path)
+	end
+
+	def self.update_android_files
+		@@languages.each { |language_code|
+			android_language_code = language_code[1]
+			remove_files_for_language(android_language_code)
+		}
+		system("cd #{@@android_path}")
+		system("phraseapp pull")
+	end
+
+	def self.remove_files_for_language(language_code)
+		path = @@android_resouces_path
+		files_path = language_code.empty? ? path : path + "-" + language_code
+		files = Dir["#{files_path}/strings_*.xml"]
+
+		files.each { |path|
+			File.delete(path)
+		}
 	end
 
 	def self.get_xml_for_language(path, language_code)
@@ -236,3 +256,4 @@ end
 PhraseApp.replace_localizable_files
 PhraseApp.swiftgenBuildPhase
 PhraseApp.replace_strings_keys
+PhraseApp.update_android_files
